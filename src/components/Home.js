@@ -80,10 +80,26 @@ export default function Home(){
                 </section>
 
                 <section className='slides'>
-                    <a className='select' href='./'><br/></a>
-                    <a href='./'><br/></a>
-                    <a href='./'><br/></a>
-                    <a href='./'><br/></a>
+                    <div className='ponto'>
+                        <a className='select' href='./'><br/></a>
+                        <p>Inicio</p>
+                    </div>
+
+                    <div className='ponto'>
+                        <a  href='./'><br/></a>
+                        <p>Sobre mim</p>
+                    </div>
+
+                    <div className='ponto'>
+                        <a  href='./'><br/></a>
+                        <p>Projetos</p>
+                    </div>
+
+                    <div className='ponto'>
+                        <a className='a'  href='./'><br/></a>
+                        <p>Contatos</p>
+                    </div>
+    
                 </section>
             </main>
 
