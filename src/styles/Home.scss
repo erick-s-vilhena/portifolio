@@ -8,7 +8,7 @@
     header{
         width: 100%;
         height: 80px;
-        max-width: 1280px;
+        max-width: 1480px;
         margin: 0 auto;
         display: flex;
         justify-content: space-between;
@@ -21,27 +21,36 @@
         }
 
         nav{
-            width: 400px;
+            position: relative;
             display: flex;
-            justify-content: space-between;
+            justify-content: right;
             align-items: center;
 
-            a{
+            a{  
+                width: 100px;
                 font-size: 16px;
                 color: var(--cor-texto);
                 text-decoration: none;
-                width: calc(100% / 4);
                 display: flex;
                 align-items: center;
                 justify-content: center;
-                &:hover{
-                    color: var(--cor-secun);
+                
+                &:nth-child(4){
+                    margin-right: 60px;
+                }
+
+                &.select{
                     font-weight: 500;
+                    color: var(--cor-prima);
+                }
+
+                p{
+                    &:hover{border-bottom: 3px solid var(--cor-secun);}
                 }
             }
 
             .tema{
-                position: relative;
+                position: fixed;
                 width: 50px;
                 height: 24px;
                 border-radius: 12px;
@@ -73,12 +82,14 @@
     }
 
     main{
+        justify-content: right;
         display: flex;
         align-items: center;
         width: 100%;
-        max-width: 1240px;
+        max-width: 1480px;
         margin: 0 auto;
         height: calc(100% - 160px);
+        max-height: 1000px;
 
         .apresentacao{
             width: calc((100% / 12) * 6);
@@ -185,21 +196,22 @@
 
         .perfil{
             position: relative;
-            width: calc((100% / 12) * 5);
+            width: calc(((100% / 12) * 5));
             display: flex;
             justify-content: center;
+            margin-right: 130px;
 
             .aux{
                 position: relative;
                 width: 50%;
                 filter: opacity(0);
-                max-width: 400px;
+                max-width: 500px;
                 aspect-ratio: 1 / 1;
                 display: flex;
                 align-items: center;
                 justify-content: center;
                 animation: sugir_foto 1s forwards;
-
+                background-color: blue;
                 @keyframes sugir_foto {
                     100%{
                         width: 100%;
@@ -291,14 +303,14 @@
         }
 
         .slides{
+            position: fixed;
             display: flex;
             flex-direction: column;
             align-items:end;
             justify-content: space-between;
-            width: calc(100% / 12);
+            width: 130px;
             height: 200px;
-
-
+            padding-right: 10px;
             .ponto{
                 position: relative;
                 display: flex;
@@ -350,10 +362,11 @@
                     height: 16px;
                     border: 3px solid var(--cor-secun);
                     transition: all 0.2s;
+                    background-color: var(--cor-bg);
                     z-index: 20;
 
                     &:hover + p{
-                        width: auto;
+                        width: 120px;
                         padding-right: 30px;
                         color: var(--cor-texto);
                     }
@@ -371,6 +384,10 @@
                         width: 20px;
                         height: 20px;
                         background-color: var(--cor-prima);
+
+                        &:hover{
+                            background-color: var(--cor-bg);
+                        }
                     }
                 }
             }

@@ -1,4 +1,5 @@
 import '../styles/Home.scss'
+import '../styles/mobile/Home-mobile.scss'
 import Logo from '../img/logo.svg';
 import Perfil from '../img/perfil.png';
 import { RiLinkedinFill , RiGithubFill, RiArrowDownDoubleFill } from "react-icons/ri";
@@ -17,9 +18,10 @@ export default function Home(){
                 </div>
 
                 <nav>
-                    <a href='./'>Sobre mim</a>
-                    <a href='./'>Projetos</a>
-                    <a href='./'>Contatos</a>
+                    <a className='select' href='./'><p>Início</p></a>
+                    <a href='./'><p>Sobre mim</p></a>
+                    <a href='./'><p>Projetos</p></a>
+                    <a href='./'><p>Contatos</p></a>
 
                     <div className='tema'>
                         <span><FaMoon/></span>
@@ -82,7 +84,7 @@ export default function Home(){
                 <section className='slides'>
                     <div className='ponto'>
                         <a className='select' href='./'><br/></a>
-                        <p>Inicio</p>
+                        <p>Início</p>
                     </div>
 
                     <div className='ponto'>
