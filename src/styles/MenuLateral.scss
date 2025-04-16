@@ -1,0 +1,158 @@
+.menu_lateral{
+    width: 130px;
+    height: 100vh;
+    margin: 0 auto;
+    position: fixed;
+    transform: translateX(100%);
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    border: 1px solid rgba(255, 0, 0, 0.315);
+
+    @media screen and (max-width: 600px){
+        &{
+            width: auto;
+            right: 20px;
+        }
+    }
+
+    .tema{
+        top: 0;
+        position: absolute;
+        display: flex;
+        align-items: center;
+        justify-content: right;
+        padding: 20px 0;
+
+        .box{
+            width: 50px;
+            height: 24px;
+            border-radius: 12px;
+            display: flex;
+            padding: 4px;
+            justify-content: space-between;
+            background-color: var(--cor-prima);
+            cursor: pointer;
+            position: relative;
+
+            &:hover{
+                filter: brightness(90%);
+            }
+
+            span{
+                display: flex;
+                color: var(--cor-bg);
+            }
+
+            .interruptor{
+                position: absolute;
+                width: 20px;
+                height: 20px;
+                top: 2px;
+                right: 2px;
+                border-radius: 50%;
+                background-color: var(--cor-secun);
+            }
+        }
+    }
+
+    .slides{
+        position: fixed;
+        display: flex;
+        flex-direction: column;
+        align-items:end;
+        justify-content: space-between;
+        width: 130px;
+        height: 200px;
+        padding-right: 10px;
+        .ponto{
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: right;
+            top: 100px;
+            right: 0;
+            filter: opacity(0);
+
+            @mixin sugir_slide($tempo: 1s, $delay: 1s){
+                @keyframes sugir_slide {
+                    100%{
+                        top: 0;
+                        filter: opacity(1);
+                    }
+                }
+
+                animation: sugir_slide $tempo forwards;
+                animation-delay: $delay;
+            }
+
+            @for $i from 0 through 4 {
+                &:nth-child(#{$i}) {
+                  @include sugir_slide(0.5s, $i * 0.2s);
+                }
+            }
+
+            p{  
+                position: relative;
+                line-height: 20px;
+                overflow: hidden;
+                width: 0;
+                padding-right: 0px;
+                white-space: nowrap;
+                text-align: right;
+                transition: all 0.5s;
+                animation: mostrar_p 5s 1.5s;
+                user-select: none;
+                z-index: 10;
+                color: transparent;
+
+                @keyframes mostrar_p {
+                    20%, 80%{
+                        width: 120px;
+                        padding-right: 30px;
+                        color: var(--cor-texto);
+                    }
+                    
+                }
+            }
+
+
+            a{  
+                position: absolute;
+                right: 0;
+                display: block;
+                width: 16px;
+                height: 16px;
+                border: 3px solid var(--cor-secun);
+                transition: all 0.2s;
+                background-color: var(--cor-bg);
+                z-index: 20;
+
+                &:hover + p{
+                    width: 120px;
+                    padding-right: 30px;
+                    color: var(--cor-texto);
+                }
+
+                &:hover{
+                    width: 20px;
+                    height: 20px;
+                    transform: rotate(45deg);
+                    background-color: var(--cor-secun);
+                }
+
+                &.select{
+                    border-color: var(--cor-prima);
+                    transform: rotate(45deg);
+                    width: 20px;
+                    height: 20px;
+                    background-color: var(--cor-prima);
+
+                    &:hover{
+                        background-color: var(--cor-bg);
+                    }
+                }
+            }
+        }
+    }
+}
