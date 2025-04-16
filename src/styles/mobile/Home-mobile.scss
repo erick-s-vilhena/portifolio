@@ -1,4 +1,4 @@
-@media screen and (max-width: 1180px){
+@media screen and (max-width: 600px){
     .home{
         main{
             flex-direction: column;
@@ -14,7 +14,6 @@
                 width: 100%;
                 height:50%;
                 margin-right: 0;
-                background-color: red;
             }
 
             .slides{
@@ -27,11 +26,9 @@
         
         .seta{
             height: 100px;
-            background-color: aqua;
 
             .center{
-                justify-content: end;
-                background-color: aquamarine;
+                justify-content: center;
             }
         }
     }

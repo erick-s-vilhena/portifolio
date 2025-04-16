@@ -12,6 +12,7 @@ export default function Home(){
 
     return (
         <div className="home">
+
             <header>
                 <div className='logo'>
                     <img src={Logo} alt='logo'/>
