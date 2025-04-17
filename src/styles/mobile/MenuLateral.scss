@@ -1,0 +1,95 @@
+@media only screen and (max-width: 768px) {
+    .menu_lateral{
+        all: revert;
+        position: fixed;
+        right: 0;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: end;
+
+        .tema{
+            all: revert;
+            display: none;
+            margin-bottom: 20px;
+        }
+
+        .slides{
+            all: revert;
+            display: none;
+
+            .ponto{
+                all: revert;
+                text-decoration: none;
+                display: flex;
+                flex-direction: row-reverse;
+                justify-content: space-between;
+                align-items: center;
+                height: 50px;
+                padding: 0 20px;
+                width: 130px;
+                cursor: pointer;
+                border-radius: 25px;
+                background-color: var(--cor-titulo);
+                color: var(--cor-texto);
+
+                &:hover{
+                    filter: brightness(90%) !important;
+                }
+
+                a{
+                    all: revert;
+                    position: relative;
+                    display: block;
+                    width: 16px;
+                    height: 16px;
+                    border: 3px solid var(--cor-secun);
+                    transition: all 0.2s;
+                    background-color: var(--cor-titulo);
+
+                    &:hover + p{
+                        width: 80%;
+                        padding-right: 0;
+                        color: var(--cor-secun);
+                    }
+                }
+
+                p{  
+                    all: revert;
+                    width: 80%;
+                    text-align: center;
+                    padding-right: 0;
+                    margin: 0;
+                }
+            }
+        }
+    }
+
+    .circu_mobi_open{
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 326px;
+        height: 326px;
+        border-radius: 0 0 0 100%;
+        background-color: var(--cor-titulo);
+        color: var(--cor-titulo);
+        transition: all 0.2s;
+
+        &.closed{
+            width: 80px;
+            height: 80px;
+            display: flex;
+            justify-content: right;
+            padding: 12px 12px 0 0;
+            color: var(--cor-bg);
+            font-size: 40px;
+            background-color: var(--cor-prima);
+            cursor: pointer;
+            
+            &:hover{
+                filter: brightness(80%);
+            }
+        }
+    }
+}

@@ -13,7 +13,7 @@ export default function Home(){
 
     return (
         <div className="home container-xxl ">
-            <MenuLateral/>
+            
 
             <header className='row'>
                 <div className='col'>a</div>

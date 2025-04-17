@@ -38,7 +38,17 @@ code {
   width: 100%;
   max-width: 1480px;
   margin: 0 auto;
-  padding-right: 130px;
-  background-color: var(--cor-bg);
+  display: flex;
   position: relative;
+}
+
+.row{
+  flex-grow: 1;
+  width: 100%;
+  display: flex;
+  border: 2px solid blue !important;
+}
+
+.col{
+  flex-grow: 1;
 }

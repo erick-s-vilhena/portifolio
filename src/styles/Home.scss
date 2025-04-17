@@ -4,25 +4,8 @@
     display: flex;
     flex-direction: column;
     align-items: end;
-    background-color: rgba(139, 169, 212, 0.475);
 
     header{
-        background-color: red;
-    }
-}
-
-.row{
-    width: 100%;
-    display: flex;
-    background-color: rgba(139, 169, 212, 0.475);
-    border: 2px solid blue !important;
-}
-
-.col{
-    border: 2px solid red;  
-    flex-grow: 1;
-    
-    &.c{
-        background-color: aqua;
+        
     }
 }

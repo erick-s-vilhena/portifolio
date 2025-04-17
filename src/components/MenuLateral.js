@@ -1,9 +1,15 @@
 import  '../styles/MenuLateral.scss';
+import '../styles/mobile/MenuLateral.scss'
 import { FaMoon, FaSun  } from "react-icons/fa";
+import { CgMenuRight } from "react-icons/cg";
 
 export default function MenuLateral(){
     return(
-        <div className="menu_lateral">
+        <div className="menu_lateral ">
+            <div className='circu_mobi_open closed'>
+                <CgMenuRight/>
+            </div>
+
             <div className='tema'>
                 <div className='box'>
                     <span><FaMoon/></span>
@@ -14,25 +20,25 @@ export default function MenuLateral(){
             </div>
 
             <section className='slides'>
-                <div className='ponto'>
+                <a className='ponto'>
                     <a className='select' href='./'><br/></a>
                     <p>Início</p>
-                </div>
+                </a>
 
-                <div className='ponto'>
+                <a className='ponto' href='./'>
                     <a  href='./'><br/></a>
                     <p>Sobre mim</p>
-                </div>
+                </a>
 
-                <div className='ponto'>
+                <a className='ponto' href='./'>
                     <a  href='./'><br/></a>
                     <p>Projetos</p>
-                </div>
+                </a>
 
-                <div className='ponto'>
+                <a className='ponto' href='./'>
                     <a className='a'  href='./'><br/></a>
                     <p>Contatos</p>
-                </div>
+                </a>
 
             </section>
         </div>
