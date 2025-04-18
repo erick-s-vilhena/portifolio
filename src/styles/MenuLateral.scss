@@ -4,6 +4,10 @@
     display: flex;
     justify-content: right;
 
+    @media only screen and (max-width: 768px) {
+        display: none;
+    }
+
     .tema{
         position: fixed;
         display: flex;

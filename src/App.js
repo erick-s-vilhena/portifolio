@@ -1,5 +1,6 @@
 import Home from "./components/Home";
 import MenuLateral from "./components/MenuLateral";
+import MenuMobile from "./components/MenuMobile";
 import Sobre from "./components/Sobre";
 
 
@@ -13,6 +14,7 @@ function App() {
       </main>
       
       <MenuLateral/>
+      <MenuMobile/>
     </div>
   );
 }
