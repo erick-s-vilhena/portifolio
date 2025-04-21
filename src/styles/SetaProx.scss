@@ -1,0 +1,60 @@
+.seta{
+    width: 100%;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .center{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        color: var(--cor-texto);
+        user-select: none;
+        padding-top: 5px;
+        justify-content: space-between;
+        height: 100%;
+
+        a{
+            text-decoration: none;
+            color: var(--cor-texto);
+        }
+        
+        .icon_seta{
+            position: relative;
+            padding: 5px;
+
+            a{  
+                position: relative;
+                font-size: 40px;
+                width: 40px;
+                height: 40px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                color: var(--cor-prima);
+                animation: pulinho 2s cubic-bezier(0.5, 0, 0.5, 1.5) infinite;
+    
+                &:hover{
+                    color: var(--cor-secun);
+                }
+    
+                @keyframes pulinho {
+                    0%, 60%, 80%, 100%{
+                        top: 0;
+                    }
+    
+                    50%{
+                        top: -10px;
+                    }
+    
+                    70%, 90%{
+                        top: -5px
+                    }
+                }
+            }
+        }
+
+
+    }
+} 

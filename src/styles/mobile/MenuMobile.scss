@@ -2,18 +2,31 @@
     display: none;
 }
 
-@media only screen and (max-width: 767px){
+.cortina{
+    display: none;
+}
+
+@media only screen and (max-width: 768px){
+    .cortina.open{
+        display: initial;
+        position: fixed;
+        left: 0;
+        top: 0;
+        width: 100vw;
+        height: 100vh;
+        background-color: transparent;
+    }
+
     .menu_mobile{
         display: initial;
-        width: 100px;
-        height: 100px;
+        width: 90px;
+        height: 90px;
         position: fixed;
         top: -200px;
-        right: -200px;   
-        background-color: var(--cor-titulo);
+        right: -200px; 
         overflow: hidden;
         transition: all 0.5s;
-        border-radius: 0 0 0 100%;
+        border-radius: 0 0 0 10px;
         animation: surgir 1s forwards;
 
         @keyframes surgir {
@@ -27,6 +40,7 @@
             width: 200px;
             height: 280px;
             border-radius: 0 0 0 10px;
+            background-color: var(--cor-titulo);
 
             .btn_open_closed{
                 width: 30px;
@@ -34,14 +48,12 @@
                 top: 20px;
                 left: 20px;
                 border-radius: 5px;
-
-                &:hover{
-                    filter: brightness(80%);
-                }
+                background-color: var(--cor-titulo);
     
 
                 span{
                     height: 4px;
+                    background-color: var(--cor-secun);
 
                     &:nth-child(1){
                         width: 100%;
@@ -69,6 +81,16 @@
        
         }
 
+        .tema{
+            position: absolute;
+            display: flex;
+            right: -220px;
+            align-items: center;
+            justify-content: right;
+            padding: 20px 0;
+            transition: all 0.5s;
+        }
+
         .btn_open_closed{
             width: 100px;
             height: 100px;
@@ -76,14 +98,13 @@
             top: 0;
             right: 0;
             transition: all 0.5s;
-            background-color: var(--cor-titulo);
             cursor: pointer;
 
             span{
                 position: absolute;
                 display: block;
                 height: 5px;
-                background-color: var(--cor-bg);
+                background-color: var(--cor-prima);
                 transition: all 0.5s;
 
                 &:nth-child(1){
@@ -96,47 +117,6 @@
                     width: 25px;
                     top: 50%;
                     right: 20px;
-                }
-            }
-        }
-
-        .tema{
-            position: absolute;
-            display: flex;
-            right: -220px;
-            align-items: center;
-            justify-content: right;
-            padding: 20px 0;
-            transition: all 0.5s;
-    
-            .box{
-                width: 50px;
-                height: 24px;
-                border-radius: 12px;
-                display: flex;
-                padding: 4px;
-                justify-content: space-between;
-                background-color: var(--cor-prima);
-                cursor: pointer;
-                position: relative;
-    
-                &:hover{
-                    filter: brightness(90%);
-                }
-    
-                span{
-                    display: flex;
-                    color: var(--cor-bg);
-                }
-    
-                .interruptor{
-                    position: absolute;
-                    width: 20px;
-                    height: 20px;
-                    top: 2px;
-                    right: 2px;
-                    border-radius: 50%;
-                    background-color: var(--cor-secun);
                 }
             }
         }
@@ -168,7 +148,7 @@
                     background-color: var(--cor-secun);
 
                     &.select{
-                        background-color: var(--cor-bg);
+                        background-color: var(--cor-titulo);
                     }
                 }
                 
@@ -187,7 +167,7 @@
                     height: 16px;
                     border: 3px solid var(--cor-secun);
                     transition: all 0.2s;
-                    background-color: var(--cor-bg);
+                    background-color: var(--cor-titulo);
                     
                     &.select{
                         border-color: var(--cor-prima);

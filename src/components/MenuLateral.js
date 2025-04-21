@@ -1,22 +1,11 @@
 import  '../styles/MenuLateral.scss';
-import { FaMoon, FaSun  } from "react-icons/fa";
-import { CgMenuRight } from "react-icons/cg";
-import { useState } from 'react';
+import Tema from './Tema';
 
-export default function MenuLateral(){
-    const [openMenu, setOpenMenu] = useState(true)
-    
-
+export default function MenuLateral(){ 
     return(
         <div className="menu_lateral">
-            <div className='tema'>
-                <div className='box'>
-                    <span><FaMoon/></span>
-                    <span><FaSun/></span>
-
-                    <div className='interruptor'></div>
-                </div>
-            </div>
+            
+            <Tema/>
 
             <section className='slides'>
                 <div className='ponto'>

@@ -1,50 +1,12 @@
 .menu_lateral{
-    position: relative;
+    position: absolute;
+    right: 0;
     width: 130px;
     display: flex;
     justify-content: right;
 
     @media only screen and (max-width: 768px) {
         display: none;
-    }
-
-    .tema{
-        position: fixed;
-        display: flex;
-        align-items: center;
-        justify-content: right;
-        padding: 20px 0;
-
-        .box{
-            width: 50px;
-            height: 24px;
-            border-radius: 12px;
-            display: flex;
-            padding: 4px;
-            justify-content: space-between;
-            background-color: var(--cor-prima);
-            cursor: pointer;
-            position: relative;
-
-            &:hover{
-                filter: brightness(90%);
-            }
-
-            span{
-                display: flex;
-                color: var(--cor-bg);
-            }
-
-            .interruptor{
-                position: absolute;
-                width: 20px;
-                height: 20px;
-                top: 2px;
-                right: 2px;
-                border-radius: 50%;
-                background-color: var(--cor-secun);
-            }
-        }
     }
 
     .slides{

@@ -12,6 +12,26 @@ html, body{
 }
 
 
+:root {
+  --cor-bg: #16161A;
+  --cor-prima: #1DCD9F;
+  --cor-prima-dk: #169976;
+  --cor-secun: #7F5AF0;
+  --cor-titulo: #FDFDFD;
+  --cor-texto: #94A1B2;
+}
+
+[data-theme="dark"] {
+  --cor-bg: #FDFDFD;
+  --cor-prima: #7F5AF0;
+  --cor-prima-dk: #169976;
+  --cor-secun: #1DCD9F;
+  --cor-titulo: #16161A;
+  --cor-texto: #7c8188;
+}
+
+
+
 *{
   margin: 0;
   padding: 0;
@@ -19,6 +39,7 @@ html, body{
 }
 
 body {
+  transition: all 0.2s;
   padding: 0 20px;
   background-color: var(--cor-bg);
   margin: 0;
@@ -38,17 +59,10 @@ code {
   width: 100%;
   max-width: 1480px;
   margin: 0 auto;
-  display: flex;
+  display: grid;
+  grid-template-columns: auto;
+  grid-auto-flow: column;
+  grid-auto-columns: 130px;
   position: relative;
 }
 
-.row{
-  flex-grow: 1;
-  width: 100%;
-  display: flex;
-  border: 2px solid blue !important;
-}
-
-.col{
-  flex-grow: 1;
-}
