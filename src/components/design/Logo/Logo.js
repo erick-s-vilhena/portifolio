@@ -5,7 +5,7 @@ export default function Logo(){
   const [tipoLogo, setTipoLogo] = useState(true)
 
   window.addEventListener('scroll', () => {
-      if(window.scrollY != 0){
+      if(window.scrollY !== 0){
         setTipoLogo(false)
       }
       else{

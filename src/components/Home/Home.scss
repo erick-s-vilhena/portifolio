@@ -38,12 +38,8 @@
                 max-width: 500px;
                 container-type: inline-size;
                 color: var(--cor-titulo);
-                
-                h1{ font-size: clamp(30px, 4vw, 56px); }
-                h2{ font-size: clamp(24px, 4vw, 36px); }
 
                 p{  
-                    font-size: clamp(14px, 4vw, 16px);
                     white-space: initial;
                     text-align: justify;
                     color: var(--cor-texto);

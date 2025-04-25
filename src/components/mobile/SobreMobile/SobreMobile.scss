@@ -11,6 +11,7 @@
     main{
         display: grid;
         grid-template-rows: auto auto auto;
+        overflow: hidden;
 
         .fig{
             width: 100%;
@@ -20,9 +21,8 @@
             //background-color: rgba(0, 255, 255, 0.234);
 
             .st{
-                width: 30%;
-                top: 50%;
-                transform: translateY(-50%);
+                width: 25%;
+                top: 0;
             }
         }
 
@@ -30,6 +30,70 @@
             display: flex;
             flex-direction: column;
             justify-content: center;
+            width: 100%;
+            max-width: 500px;
+            margin: 0 auto;
+            overflow: hidden;
+
+            .box_texto{
+                position: relative;
+                display: flex;
+                width: calc((100% * 2));
+                transition: all 0.5s;
+                
+                .texto_sobre{
+                    flex-shrink: 1;
+                    width: 100%;
+                    max-width: 500px;
+                    text-align: justify;
+    
+                    h1{
+                        margin-bottom: 10px;
+                    }
+                }
+
+                .texto_onde{
+                    flex-shrink: 1;
+                    width: 100%;
+                    max-width: 500px;
+                    text-align: justify;
+    
+                    h1{
+                        margin-bottom: 10px;
+                    }
+                }
+            }
+
+            button{
+                border: none;
+                background-color: var(--cor-prima);
+                color: var(--cor-bg);
+                margin-top: 20px;
+                position: relative;
+                height: 28px;
+                width: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border-radius: 14px;
+                font-weight: bold;
+                cursor: pointer;
+                font-size: 14px;
+                transition: all 0.5s;
+
+                &:hover{
+                    filter: brightness(80%);
+                }
+
+                &.t-um{
+                    left: 100%;
+                    transform: translateX(-100%);
+                }
+
+                &.t-dois{
+                    left: 0;
+                }
+            }
         }
     }
 }

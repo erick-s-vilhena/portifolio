@@ -9,7 +9,7 @@ export default function Pontos(props){
                     right: props.rt, 
                     bottom: props.bt}}>
 
-            {Array.from({ length: 144 }).map((_, index) => (
+            {Array.from({ length: props.num ? props.num : 144 }).map((_, index) => (
                 <div key={index} className='pt'></div>
             ))}
 

@@ -66,5 +66,16 @@ code {
   grid-auto-columns: 130px;
   position: relative;
 }
+h1{ font-size: clamp(30px, 4vw, 56px); }
+h2{ font-size: clamp(24px, 4vw, 36px); }
+
+h1{
+  color: var(--cor-titulo);
+}
+
+p{
+  color: var(--cor-texto);
+  font-size: clamp(14px, 4vw, 16px);
+}
 
 
