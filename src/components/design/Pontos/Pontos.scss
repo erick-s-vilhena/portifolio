@@ -1,0 +1,36 @@
+.pontos{
+    width: 10vw;
+    max-width: 150px;
+    aspect-ratio: 1 / 1;
+    position: absolute;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    //background-color: rgba(186, 255, 255, 0.11);
+    
+    .pt{
+        width: 4px;
+        height: 4px;
+        align-self: center;
+        justify-self: center;
+        background-color: var(--cor-prima);
+        border-radius: 50%;
+        
+        @for $i from 1 through 144{
+            &:nth-child(#{$i}){
+
+                animation: cor 50s infinite linear;
+                animation-delay: (1s + $i) / 6;
+            }
+        }
+
+        @keyframes cor {
+            0%, 50%{
+                background-color: var(--cor-secun);
+            }
+
+            51%, 100%{
+                background-color: var(--cor-prima);
+            }
+        }
+    }
+}

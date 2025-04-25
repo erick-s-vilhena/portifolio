@@ -1,5 +1,5 @@
-import  '../styles/MenuLateral.scss';
-import Tema from './Tema';
+import  './MenuLateral.scss';
+import Tema from '../Theme/Tema';
 
 export default function MenuLateral(){ 
     return(
@@ -16,6 +16,11 @@ export default function MenuLateral(){
                 <div className='ponto'>
                     <a  href='./'><br/></a>
                     <p>Sobre mim</p>
+                </div>
+
+                <div className='ponto'>
+                    <a className='a'  href='./'><br/></a>
+                    <p>Habilidades</p>
                 </div>
 
                 <div className='ponto'>

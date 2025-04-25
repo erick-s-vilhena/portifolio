@@ -42,7 +42,7 @@
                 animation-delay: $delay;
             }
 
-            @for $i from 0 through 4 {
+            @for $i from 0 through 5 {
                 &:nth-child(#{$i}) {
                   @include sugir_slide(0.5s, $i * 0.2s);
                 }

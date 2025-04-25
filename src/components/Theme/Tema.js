@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { FaMoon, FaSun } from "react-icons/fa";
-import '../styles/Tema.scss';
+import './Tema.scss';
 
 
 export default function Tema(){

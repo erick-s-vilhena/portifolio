@@ -1,0 +1,39 @@
+.logo{
+    display: flex;
+    line-height: 30px;
+    font-size: 30px;
+    font-weight: bold;
+    color: var(--cor-titulo);
+    user-select: none;
+    overflow: hidden;
+    position: fixed;
+    top: 14px;
+
+    .menor{
+        color: var(--cor-prima);
+        z-index: 20;
+    }
+
+    .esv{
+        position: relative;
+        transition: all 0.5s;
+        top: 0;
+        z-index: 10;
+        width: 52px;
+        color: var(--cor-titulo);
+        text-decoration: none;
+
+        &.false{
+            filter: opacity(0);
+            top: -50px;
+            animation: sumir 0.2s linear forwards;
+            animation-delay: 0.2s;
+
+            @keyframes sumir {
+                100%{
+                    width: 0;
+                }
+            }
+        }
+    }
+}

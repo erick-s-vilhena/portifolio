@@ -1,6 +1,6 @@
 import { useState } from 'react';
-import '../styles/mobile/MenuMobile.scss';
-import Tema from './Tema';
+import './MenuMobile.scss';
+import Tema from '../../Theme/Tema';
 
 export default function MenuMobile(){
     const [menuOpen, setMenuOpen] = useState(false)

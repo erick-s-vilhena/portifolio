@@ -1,5 +1,5 @@
 import { RiArrowDownDoubleFill } from 'react-icons/ri'
-import '../styles/SetaProx.scss'
+import './SetaProx.scss'
 
 export default function SetaProx(props){
     return(

@@ -1,10 +1,11 @@
-import '../styles/Home.scss'
-import Perfil from '../img/perfil.png';
+import './Home.scss'
+import Perfil from '../../img/perfil.png';
 import { RiLinkedinFill , RiGithubFill } from "react-icons/ri";
 import { CgMail } from "react-icons/cg";
 import { TbFileCv } from "react-icons/tb";
-import SetaProx from './SetaProx';
-import Logo from './Logo';
+import SetaProx from '../SetaProximo/SetaProx';
+import Logo from '../design/Logo/Logo';
+import Escada from '../design/Escada/Escada';
 
 
 export default function Home(){
@@ -59,6 +60,10 @@ export default function Home(){
                                 <div className='linha dois'></div>
                             </div>
                         </div>
+
+                        <Escada tp={0} rt={0} st={'st'}/>
+
+                        <Escada bt={0} lf={0}/>
                     </div>
 
                 </div>

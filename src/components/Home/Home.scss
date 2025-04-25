@@ -39,28 +39,15 @@
                 container-type: inline-size;
                 color: var(--cor-titulo);
                 
-                h1{ font-size: 56px;} 
-                h2{ font-size: 36px;}
+                h1{ font-size: clamp(30px, 4vw, 56px); }
+                h2{ font-size: clamp(24px, 4vw, 36px); }
+
                 p{  
+                    font-size: clamp(14px, 4vw, 16px);
                     white-space: initial;
                     text-align: justify;
-                    font-size: 22px;
                     color: var(--cor-texto);
                 }   
-
-                @container (max-width: 480px) {
-                    h1{ font-size: 46px;}
-                    h2{ font-size: 26px;}
-                    p{ font-size: 16px;}
-                }
-
-                @container (max-width: 400px) {
-                    h1{ font-size: 36px;}
-                }
-
-                @container (max-width: 300px) {
-                    h1{ font-size: 30px;}
-                }
                 
 
 
@@ -184,6 +171,10 @@
                     100%{
                         filter: opacity(1);
                     }
+                }
+
+                .st{
+                    transform: rotate(180deg);
                 }
 
                 .foto{
