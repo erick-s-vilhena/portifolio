@@ -159,9 +159,13 @@
                     font-size: 16px;
                     color: var(--cor-texto);
                     flex-grow: 1;
+                    user-select: none;
+                    pointer-events: none;
                 }
 
                 .ponto{
+                    pointer-events: none;
+                    user-select: none;
                     flex-shrink: 0;
                     width: 16px;
                     height: 16px;

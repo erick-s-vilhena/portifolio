@@ -69,7 +69,7 @@ export default function Home(){
                 </div>
             </main>
 
-            <SetaProx text='click aqui!'/>
+            <SetaProx text='click aqui!' />
         </div>
     )
 }

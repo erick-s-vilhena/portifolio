@@ -1,7 +1,23 @@
 import  './MenuLateral.scss';
 import Tema from '../Theme/Tema';
+import { useState } from 'react';
 
 export default function MenuLateral(){ 
+    const [slideAtivo, setSlideAtivo] = useState('.home');
+    
+    function selectSlide(e){
+        e.preventDefault()
+
+        let href = e.target.getAttribute('href');
+        let setTop = document.querySelector(href).offsetTop;
+
+        document.documentElement.style.scrollBehavior = "smooth";
+        document.documentElement.scrollTop = setTop;
+
+        setSlideAtivo(href);
+    }
+
+
     return(
         <div className="menu_lateral">
             
@@ -9,12 +25,18 @@ export default function MenuLateral(){
 
             <section className='slides'>
                 <div className='ponto'>
-                    <a className='select' href='./'><br/></a>
+                    <a  className={slideAtivo === '.home' ? 'select' : ''} 
+                        href='.home' 
+                        onClick={(e)=> {selectSlide(e)}}><br/>
+                    </a>
                     <p>Início</p>
                 </div>
 
                 <div className='ponto'>
-                    <a  href='./'><br/></a>
+                    <a  className={slideAtivo === '.sobre' ? 'select' : ''}  
+                        href='.sobre' 
+                        onClick={(e)=> {selectSlide(e)}}><br/>
+                    </a>
                     <p>Sobre mim</p>
                 </div>
 

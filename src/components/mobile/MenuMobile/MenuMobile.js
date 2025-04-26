@@ -5,6 +5,20 @@ import Tema from '../../Theme/Tema';
 export default function MenuMobile(){
     const [menuOpen, setMenuOpen] = useState(false)
 
+    const [slideAtivo, setSlideAtivo] = useState('.home');
+    
+    function selectSlide(e){
+        e.preventDefault()
+
+        let href = e.target.getAttribute('href');
+        let setTop = document.querySelector(href).offsetTop;
+
+        document.documentElement.style.scrollBehavior = "smooth";
+        document.documentElement.scrollTop = setTop;
+
+        setSlideAtivo(href);
+    }
+
     return(
         <>  
             <div className={`cortina ${menuOpen && 'open'}`}
@@ -22,14 +36,14 @@ export default function MenuMobile(){
                 <Tema/>
 
                 <div className='slides'>
-                    <a className='slide_single' href='./'>
+                    <a className='slide_single' href='.home' onClick={(e)=> {selectSlide(e)}}>
                         <p>Início</p>
-                        <div className='ponto select'></div>
+                        <div className={`ponto ${slideAtivo === '.home' ? 'select' : ''}`}></div>
                     </a>
 
-                    <a className='slide_single' href='./'>
+                    <a className='slide_single' href='.sobre_mobile' onClick={(e)=> {selectSlide(e)}}>
                         <p>Sobre mim</p>
-                        <div className='ponto'></div>
+                        <div className={`ponto ${slideAtivo === '.sobre_mobile' ? 'select' : ''}`}></div>
                     </a>
 
                     <a className='slide_single' href='./'>
