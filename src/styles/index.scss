@@ -65,6 +65,10 @@ code {
   grid-auto-flow: column;
   grid-auto-columns: 130px;
   position: relative;
+
+  main{
+    padding: 0;
+  }
 }
 h1{ font-size: clamp(30px, 4vw, 56px); }
 h2{ font-size: clamp(24px, 4vw, 36px); }

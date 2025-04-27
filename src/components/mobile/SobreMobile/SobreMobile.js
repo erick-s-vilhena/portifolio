@@ -8,7 +8,7 @@ export default function SobreMobile(){
     const [slide, setSlide] = useState('Sobre mim');
 
     return(
-        <div className="sobre_mobile">
+        <div className="sobre mobile">
             <header>
                 
             </header>

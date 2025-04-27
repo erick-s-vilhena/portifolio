@@ -5,7 +5,7 @@ import Bolas from '../design/Bolas/Bolas'
 
 export default function Sobre(){
     return(
-        <div className="sobre">
+        <div className="sobre desktop">
             <header>
 
             </header>

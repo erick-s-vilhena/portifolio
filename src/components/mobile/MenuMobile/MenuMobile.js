@@ -11,7 +11,9 @@ export default function MenuMobile(){
         e.preventDefault()
 
         let href = e.target.getAttribute('href');
+        
         let setTop = document.querySelector(href).offsetTop;
+
 
         document.documentElement.style.scrollBehavior = "smooth";
         document.documentElement.scrollTop = setTop;
@@ -41,9 +43,9 @@ export default function MenuMobile(){
                         <div className={`ponto ${slideAtivo === '.home' ? 'select' : ''}`}></div>
                     </a>
 
-                    <a className='slide_single' href='.sobre_mobile' onClick={(e)=> {selectSlide(e)}}>
+                    <a className='slide_single' href='.sobre.mobile' onClick={(e)=> {selectSlide(e)}}>
                         <p>Sobre mim</p>
-                        <div className={`ponto ${slideAtivo === '.sobre_mobile' ? 'select' : ''}`}></div>
+                        <div className={`ponto ${slideAtivo === '.sobre.mobile' ? 'select' : ''}`}></div>
                     </a>
 
                     <a className='slide_single' href='./'>

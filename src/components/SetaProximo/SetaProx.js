@@ -9,18 +9,27 @@ export default function SetaProx(props){
 
         let atual = document.querySelector('a.select');
 
-        console.log(atual)
+        let posicao = slide.indexOf(atual.getAttribute('href'))
 
+        let setTop = 0
+
+        if(document.querySelector(`${slide[posicao + 1]}`).offsetTop){
+            setTop = document.querySelector(`${slide[posicao + 1]}`).offsetTop;
+        }else{
+            setTop = document.querySelector(`${slide[posicao + 1]}.mobile`).offsetTop;
+        }
+
+        document.documentElement.style.scrollBehavior = "smooth";
+        document.documentElement.scrollTop = setTop;
     }
 
     return(
         <div className='seta'>
             <div className='center'>
-                <a href='0'
-                    onClick={(e)=> proxSlide(e)}>{props.text}</a>
+                <button onClick={(e)=> proxSlide(e)}>{props.text}</button>
 
                 <div className='icon_seta'>
-                    <a href='0'><RiArrowDownDoubleFill /></a>
+                    <button onClick={(e)=> proxSlide(e)}><RiArrowDownDoubleFill /></button>
                 </div>
             </div>
         </div>

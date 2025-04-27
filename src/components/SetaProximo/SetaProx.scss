@@ -1,6 +1,5 @@
 .seta{
     width: 100%;
-    height: 80px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -14,17 +13,23 @@
         padding-top: 5px;
         justify-content: space-between;
         height: 100%;
+        position: relative;
 
-        a{
+        button{
+            border: none;
+            font-size: 14px;
             text-decoration: none;
             color: var(--cor-texto);
+            background-color: transparent;
+            cursor: pointer;
         }
         
         .icon_seta{
             position: relative;
             padding: 5px;
+            flex-grow: 1;
 
-            a{  
+            button{  
                 position: relative;
                 font-size: 40px;
                 width: 40px;
