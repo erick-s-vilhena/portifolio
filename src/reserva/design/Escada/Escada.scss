@@ -1,0 +1,22 @@
+.escada{
+    width: 20%;
+    aspect-ratio: 1 / 1;
+    position: absolute;
+    //background-color: rgba(0, 255, 255, 0.151);
+
+    .dg{
+        width: calc(100% / 5);
+        aspect-ratio: 1 / 1;
+        border-left: 2px solid var(--cor-prima);
+        border-bottom: 2px solid var(--cor-prima);
+        position: relative;
+
+        @for $i from 1 through 5 {
+            &:nth-child(#{$i}){
+
+                left: (20% * ($i - 1));
+                box-sizing: initial;
+            }
+        }
+    }
+}

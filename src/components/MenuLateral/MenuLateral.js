@@ -1,47 +1,34 @@
 import  './MenuLateral.scss';
-import Tema from '../Theme/Tema';
 import { useContext } from 'react';
 import { SectionContext } from '../../context/SectionContext';
 
-export default function MenuLateral(){ 
+function Ponto({texto, sessao}){
     const { section, setSection} = useContext(SectionContext)
 
     return(
+        <div className='ponto'>
+            <div  className={`quadrado ${section === sessao && 'select'}`} 
+                onClick={()=>{setSection(sessao)}}>
+            </div>
+            <p>{texto}</p>
+        </div>
+    )
+}
+
+export default function MenuLateral(){ 
+    return(
         <div className="menu_lateral">
-            
-            <Tema/>
 
-            <section className='slides'>
-                <div className='ponto'>
-                    <div  className={`quadrado ${section === 'home' && 'select'}`} 
-                        onClick={()=>{setSection('home')}}>
-                    </div>
-                    <p>Início</p>
-                </div>
+            <section className='container'>
+                <Ponto texto={'Início'} sessao={'Home'}/>
 
-                <div className='ponto'>
-                    <div className={`quadrado ${section === 'sobre' && 'select'}`} 
-                        onClick={()=>{setSection('sobre')}}>
-                    </div>
+                <Ponto texto={'Sobre mim'} sessao={'Sobre'}/>
 
-                    <p>Sobre mim</p>
-                </div>
+                <Ponto texto={'Habilidades'} sessao={'Habilidades'}/>
 
-                <div className='ponto'>
-                    <div className={`quadrado`} ></div>
-                    <p>Habilidades</p>
-                </div>
+                <Ponto texto={'Projetos'} sessao={'Projetos'}/>
 
-                <div className='ponto'>
-                    <div className={`quadrado`}></div>
-                    <p>Projetos</p>
-                </div>
-
-                <div className='ponto'>
-                    <div className={`quadrado`} ></div>
-                    <p>Contatos</p>
-                </div>
-
+                <Ponto texto={'Contato'} sessao={'Contato'}/>
             </section>
         </div>
     )

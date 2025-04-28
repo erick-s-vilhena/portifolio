@@ -3,10 +3,19 @@ import './MenuMobile.scss';
 import Tema from '../../Theme/Tema';
 import { SectionContext } from '../../../context/SectionContext';
 
+function Ponto({texto, sessao}){
+    const { section, setSection} = useContext(SectionContext)
+
+    return(
+        <div className='ponto' onClick={()=> {setSection(sessao)}}>
+            <p>{texto}</p>
+            <div className={`quadrado ${section === sessao && 'select'}`}></div>
+        </div>
+    )
+}
+
 export default function MenuMobile(){
     const [menuOpen, setMenuOpen] = useState(false)
-
-    const { section, setSection} = useContext(SectionContext)
 
     return(
         <>  
@@ -24,26 +33,16 @@ export default function MenuMobile(){
 
                 <Tema/>
 
-                <div className='slides'>
-                    <div className='slide_single' onClick={()=> {setSection('home')}}>
-                        <p>Início</p>
-                        <div className={`quadrado ${section === 'home' && 'select'}`}></div>
-                    </div>
+                <div className='container'>
+                    <Ponto texto={'Início'} sessao={'Home'}/>
 
-                    <div className='slide_single' onClick={(e)=> {setSection('sobre')}}>
-                        <p>Sobre mim</p>
-                        <div className={`quadrado ${section === 'sobre' && 'select'}`}></div>
-                    </div>
+                    <Ponto texto={'Sobre mim'} sessao={'Sobre'}/>
 
-                    <div className='slide_single' href='./'>
-                        <p>Meus projetos</p>
-                        <div className='quadrado'></div>
-                    </div>
+                    <Ponto texto={'Habilidades'} sessao={'Habilidades'}/>
 
-                    <div className='slide_single' href='./'>
-                        <p>Entre em contato</p>
-                        <div className='quadrado'></div>
-                    </div>
+                    <Ponto texto={'Projetos'} sessao={'Projetos'}/>
+
+                    <Ponto texto={'Contato'} sessao={'Contato'}/>
                 </div>
             </div>
         </>

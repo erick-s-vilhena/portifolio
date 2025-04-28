@@ -1,22 +1,18 @@
-import { useState } from 'react';
+import { useContext } from 'react';
 import './Logo.scss'
+import { SectionContext } from '../../../context/SectionContext';
 
 export default function Logo(){
-  const [tipoLogo, setTipoLogo] = useState(true)
-
-  window.addEventListener('scroll', () => {
-      if(window.scrollY !== 0){
-        setTipoLogo(false)
-      }
-      else{
-        setTipoLogo(true)
-      }
-  });
+  const { section, setSection } = useContext(SectionContext);
 
   return(
-    <div className="logo">
+    <div className="logo" onClick={()=>{ setSection('Home') }}>
       <div className="menor">{'<'}</div>
-      <a className={`esv ${tipoLogo}`} href='./'>ESV</a>
+
+      <div className={`esv ${section !== 'Home' && 'sumir'}`}>
+          ESV
+      </div>
+
       <div className="menor">{'/>'}</div>
     </div>
   )

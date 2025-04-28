@@ -1,14 +1,13 @@
 .logo{
     display: flex;
-    position: relative;
-    line-height: 26px;
+    line-height: 30px;
     font-size: 30px;
     font-weight: bold;
     color: var(--cor-titulo);
     user-select: none;
     overflow: hidden;
-    cursor: pointer;
-    //background-color: rgba(0, 255, 255, 0.232);
+    position: fixed;
+    top: 14px;
 
     .menor{
         color: var(--cor-prima);
@@ -24,7 +23,7 @@
         color: var(--cor-titulo);
         text-decoration: none;
 
-        &.sumir{
+        &.false{
             filter: opacity(0);
             top: -50px;
             animation: sumir 0.2s linear forwards;

@@ -1,0 +1,41 @@
+.bolas{
+    position: absolute;
+    width: 20%;
+    min-width: 100px;
+    max-width: 120px;
+    aspect-ratio: 1 / 0.5;
+    align-items: center;
+    justify-content: space-between;
+    display: flex;
+    //background-color: rgba(101, 58, 58, 0.21);
+
+    .bl{
+        width: calc(100% / 7);
+        aspect-ratio: 1 / 1;
+        flex-shrink: 1;
+        border-radius: 50%;
+        border: 2px solid var(--cor-prima);
+        position: relative;
+
+        @for $i from 1 through 6{
+            &:nth-child(#{$i}){
+                animation: pulo 3s infinite linear;
+                animation-delay: (1s * $i) / 4;
+            }
+        }
+
+        @keyframes pulo {
+            0%, 40%{
+                bottom: 0;
+            }
+
+            50%{
+                bottom: 20px;
+            }
+            60%, 100%{
+                bottom: 0;
+            }
+
+        }
+    }
+}
