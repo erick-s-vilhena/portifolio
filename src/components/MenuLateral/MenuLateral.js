@@ -1,22 +1,10 @@
 import  './MenuLateral.scss';
 import Tema from '../Theme/Tema';
-import { useState } from 'react';
+import { useContext } from 'react';
+import { SectionContext } from '../../context/SectionContext';
 
 export default function MenuLateral(){ 
-    const [slideAtivo, setSlideAtivo] = useState('.home');
-    
-    function selectSlide(e){
-        e.preventDefault()
-
-        let href = e.target.getAttribute('href');
-        let setTop = document.querySelector(href).offsetTop;
-
-        document.documentElement.style.scrollBehavior = "smooth";
-        document.documentElement.scrollTop = setTop;
-
-        setSlideAtivo(href);
-    }
-
+    const { section, setSection} = useContext(SectionContext)
 
     return(
         <div className="menu_lateral">
@@ -25,33 +13,32 @@ export default function MenuLateral(){
 
             <section className='slides'>
                 <div className='ponto'>
-                    <a  className={slideAtivo === '.home' ? 'select' : ''} 
-                        href='.home' 
-                        onClick={(e)=> {selectSlide(e)}}><br/>
-                    </a>
+                    <div  className={`quadrado ${section === 'home' && 'select'}`} 
+                        onClick={()=>{setSection('home')}}>
+                    </div>
                     <p>Início</p>
                 </div>
 
                 <div className='ponto'>
-                    <a  className={slideAtivo === '.sobre' ? 'select' : ''}  
-                        href='.sobre' 
-                        onClick={(e)=> {selectSlide(e)}}><br/>
-                    </a>
+                    <div className={`quadrado ${section === 'sobre' && 'select'}`} 
+                        onClick={()=>{setSection('sobre')}}>
+                    </div>
+
                     <p>Sobre mim</p>
                 </div>
 
                 <div className='ponto'>
-                    <a className='a'  href='./'><br/></a>
+                    <div className={`quadrado`} ></div>
                     <p>Habilidades</p>
                 </div>
 
                 <div className='ponto'>
-                    <a  href='./'><br/></a>
+                    <div className={`quadrado`}></div>
                     <p>Projetos</p>
                 </div>
 
                 <div className='ponto'>
-                    <a className='a'  href='./'><br/></a>
+                    <div className={`quadrado`} ></div>
                     <p>Contatos</p>
                 </div>
 

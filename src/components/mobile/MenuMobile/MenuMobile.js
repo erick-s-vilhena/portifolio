@@ -1,25 +1,12 @@
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import './MenuMobile.scss';
 import Tema from '../../Theme/Tema';
+import { SectionContext } from '../../../context/SectionContext';
 
 export default function MenuMobile(){
     const [menuOpen, setMenuOpen] = useState(false)
 
-    const [slideAtivo, setSlideAtivo] = useState('.home');
-    
-    function selectSlide(e){
-        e.preventDefault()
-
-        let href = e.target.getAttribute('href');
-        
-        let setTop = document.querySelector(href).offsetTop;
-
-
-        document.documentElement.style.scrollBehavior = "smooth";
-        document.documentElement.scrollTop = setTop;
-
-        setSlideAtivo(href);
-    }
+    const { section, setSection} = useContext(SectionContext)
 
     return(
         <>  
@@ -38,25 +25,25 @@ export default function MenuMobile(){
                 <Tema/>
 
                 <div className='slides'>
-                    <a className='slide_single' href='.home' onClick={(e)=> {selectSlide(e)}}>
+                    <div className='slide_single' onClick={()=> {setSection('home')}}>
                         <p>Início</p>
-                        <div className={`ponto ${slideAtivo === '.home' ? 'select' : ''}`}></div>
-                    </a>
+                        <div className={`quadrado ${section === 'home' && 'select'}`}></div>
+                    </div>
 
-                    <a className='slide_single' href='.sobre.mobile' onClick={(e)=> {selectSlide(e)}}>
+                    <div className='slide_single' onClick={(e)=> {setSection('sobre')}}>
                         <p>Sobre mim</p>
-                        <div className={`ponto ${slideAtivo === '.sobre.mobile' ? 'select' : ''}`}></div>
-                    </a>
+                        <div className={`quadrado ${section === 'sobre' && 'select'}`}></div>
+                    </div>
 
-                    <a className='slide_single' href='./'>
+                    <div className='slide_single' href='./'>
                         <p>Meus projetos</p>
-                        <div className='ponto'></div>
-                    </a>
+                        <div className='quadrado'></div>
+                    </div>
 
-                    <a className='slide_single' href='./'>
+                    <div className='slide_single' href='./'>
                         <p>Entre em contato</p>
-                        <div className='ponto'></div>
-                    </a>
+                        <div className='quadrado'></div>
+                    </div>
                 </div>
             </div>
         </>

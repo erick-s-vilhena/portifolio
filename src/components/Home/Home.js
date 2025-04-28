@@ -11,7 +11,7 @@ import Escada from '../design/Escada/Escada';
 export default function Home(){
 
     return (
-        <div className="home">
+        <div className="home page">
             <header>
                 <Logo/>
             </header>
@@ -69,7 +69,7 @@ export default function Home(){
                 </div>
             </main>
 
-            <SetaProx text='click aqui!' />
+            <SetaProx text='click aqui' />
         </div>
     )
 }

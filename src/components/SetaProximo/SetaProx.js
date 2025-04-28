@@ -1,35 +1,19 @@
 import { RiArrowDownDoubleFill } from 'react-icons/ri'
 import './SetaProx.scss'
+import { useContext } from 'react';
+import { SectionContext } from '../../context/SectionContext';
 
 export default function SetaProx(props){
-    const slide = ['.home', '.sobre'];
 
-    function proxSlide(e){
-        e.preventDefault();
-
-        let atual = document.querySelector('a.select');
-
-        let posicao = slide.indexOf(atual.getAttribute('href'))
-
-        let setTop = 0
-
-        if(document.querySelector(`${slide[posicao + 1]}`).offsetTop){
-            setTop = document.querySelector(`${slide[posicao + 1]}`).offsetTop;
-        }else{
-            setTop = document.querySelector(`${slide[posicao + 1]}.mobile`).offsetTop;
-        }
-
-        document.documentElement.style.scrollBehavior = "smooth";
-        document.documentElement.scrollTop = setTop;
-    }
+    const { proxSlide } = useContext(SectionContext)
 
     return(
         <div className='seta'>
             <div className='center'>
-                <button onClick={(e)=> proxSlide(e)}>{props.text}</button>
+                <button onClick={()=> proxSlide()}>{props.text}</button>
 
                 <div className='icon_seta'>
-                    <button onClick={(e)=> proxSlide(e)}><RiArrowDownDoubleFill /></button>
+                    <button onClick={()=> proxSlide()}><RiArrowDownDoubleFill /></button>
                 </div>
             </div>
         </div>
