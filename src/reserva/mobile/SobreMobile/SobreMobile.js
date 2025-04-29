@@ -9,6 +9,9 @@ export default function SobreMobile(){
 
     return(
         <div className="mobile">
+            <header>
+                
+            </header>
 
             <main>
                 <div className='fig'>
@@ -55,6 +58,8 @@ export default function SobreMobile(){
                 </div>
                 
             </main>
+
+            <SetaProx text='continue'/>
         </div>
     )
 }

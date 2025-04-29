@@ -12,7 +12,8 @@ export default function SetaProx(){
     const texto = useMemo(() => ({
  
         Home: 'click aqui',
-        Sobre: 'continue'
+        Sobre: 'continue',
+        Habilidades: 'mais um pouco'
      
     }), [])
 

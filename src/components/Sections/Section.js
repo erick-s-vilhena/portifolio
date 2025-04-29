@@ -1,6 +1,6 @@
 import Home from '../Home/Home';
-import Sobre from '../Sobre/Sobre'
-import SetaProx from '../SetaProximo/SetaProx'
+import Sobre from '../Sobre/Sobre';
+import Habilidades from '../Habilidades/Habilidades'
 import './Section.scss';
 import { useContext, useEffect, useState } from 'react';
 import { SectionContext } from '../../context/SectionContext';
@@ -20,12 +20,17 @@ export default function Section(){
     return(
         <div className='Section'>
             <div className='interface' style={{top: `-${sessao}px`}}>
+                
                 <Home/>
 
-                <Sobre/>
-            </div>
+                <div className='espaco'></div>
 
-            <SetaProx/>
+                <Sobre/>
+
+                <div className='espaco'></div>
+
+                <Habilidades/>
+            </div>
         </div>
     )
 }

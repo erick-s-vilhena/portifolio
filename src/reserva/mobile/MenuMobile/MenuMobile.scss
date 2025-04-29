@@ -1,0 +1,190 @@
+.menu_mobile{
+    display: none;
+}
+
+.cortina{
+    display: none;
+}
+
+@media only screen and (max-width: 768px){
+    .cortina.open{
+        display: initial;
+        position: fixed;
+        left: 0;
+        top: 0;
+        width: 100vw;
+        height: 100vh;
+        background-color: transparent;
+        z-index: 998;
+    }
+
+    .menu_mobile{
+        display: initial;
+        width: 90px;
+        height: 90px;
+        position: fixed;
+        top: -200px;
+        right: -200px; 
+        overflow: hidden;
+        transition: all 0.5s;
+        border-radius: 0 0 0 10px;
+        animation: surgir 1s forwards;
+        z-index: 999;
+
+        @keyframes surgir {
+            100%{
+                top: 0px;
+                right: 0px;  
+            }
+        }
+
+        &.open{
+            width: 200px;
+            height: 330px;
+            border-radius: 0 0 0 10px;
+            background-color: var(--cor-titulo);
+
+            .btn_open_closed{
+                width: 30px;
+                height: 30px;
+                top: 20px;
+                left: 20px;
+                border-radius: 5px;
+                background-color: var(--cor-titulo);
+    
+
+                span{
+                    height: 4px;
+                    background-color: var(--cor-secun);
+
+                    &:nth-child(1){
+                        width: 100%;
+                        top: 50%;
+                        right: initial;
+                        transform: translateY(-50%) rotate(45deg);
+                    }
+    
+                    &:nth-child(2){
+                        width: 100%;
+                        top: 50%;
+                        right: initial;
+                        transform: translateY(-50%) rotate(-45deg);
+                    }
+                }
+            }
+
+            .tema{
+                right: 20px;
+            }
+
+            .container{
+                right: 0;
+            }
+       
+        }
+
+        .tema{
+            position: absolute;
+            display: flex;
+            right: -220px;
+            align-items: center;
+            justify-content: right;
+            padding: 20px 0;
+            transition: all 0.5s;
+        }
+
+        .btn_open_closed{
+            width: 100px;
+            height: 100px;
+            position: absolute;
+            top: 0;
+            right: 0;
+            transition: all 0.5s;
+            cursor: pointer;
+
+            span{
+                position: absolute;
+                display: block;
+                height: 5px;
+                background-color: var(--cor-prima);
+                transition: all 0.5s;
+
+                &:nth-child(1){
+                    width: 50px;
+                    top: 20%;
+                    right: 20px;
+                }
+
+                &:nth-child(2){
+                    width: 25px;
+                    top: 40%;
+                    right: 20px;
+                }
+            }
+        }
+        
+        .container{
+            position: absolute;
+            width: 100%;
+            right: -200px;
+            transition: all 0.5s;
+            top: 80px;
+
+            .ponto{
+                width: 100%;
+                display: flex;
+                align-items: center;
+                padding: 5px 20px;
+                height: 50px;
+                text-decoration: none;
+                background-color: var(--cor-titulo);
+
+                &:hover{
+                    filter: brightness(80%);
+                }
+
+                &:hover .ponto{
+                    width: 20px;
+                    height: 20px;
+                    transform: rotate(45deg);
+                    background-color: var(--cor-secun);
+
+                    &.select{
+                        background-color: var(--cor-titulo);
+                    }
+                }
+                
+                p{
+                    width: 200px;
+                    margin-right: 12px;
+                    text-align: right;
+                    font-size: 16px;
+                    color: var(--cor-texto);
+                    flex-grow: 1;
+                    user-select: none;
+                    pointer-events: none;
+                }
+
+                .quadrado{
+                    pointer-events: none;
+                    user-select: none;
+                    flex-shrink: 0;
+                    width: 16px;
+                    height: 16px;
+                    border: 3px solid var(--cor-secun);
+                    transition: all 0.2s;
+                    background-color: var(--cor-titulo);
+                    
+                    &.select{
+                        border-color: var(--cor-prima);
+                        transform: rotate(45deg);
+                        width: 20px;
+                        height: 20px;
+                        background-color: var(--cor-prima);
+                        
+                    }
+                }
+            }
+        }
+    }
+}

@@ -10,6 +10,8 @@
 html, body{
   height: 100%;
   font-size: 16px;
+  padding: 0;
+  margin: 0;
 }
 
 
@@ -19,7 +21,7 @@ html, body{
   --cor-prima-dk: #169976;
   --cor-secun: #7F5AF0;
   --cor-titulo: #FDFDFD;
-  --cor-texto: #94A1B2;
+  --cor-texto: #9daabb;
 }
 
 [data-theme="dark"] {
@@ -27,8 +29,8 @@ html, body{
   --cor-prima: #7F5AF0;
   --cor-prima-dk: #169976;
   --cor-secun: #1DCD9F;
-  --cor-titulo: #16161A;
-  --cor-texto: #7c8188;
+  --cor-titulo: #212128;
+  --cor-texto: #585b5f;
 }
 
 
@@ -61,6 +63,7 @@ code {
   height: 100vh;
   max-width: 1480px;
   margin: 0 auto;
+  padding: 0;
   position: relative;
   display: flex;
   flex-direction: column;

@@ -3,7 +3,8 @@ import React from 'react';
 import Header from './components/Header/Header';
 import SectionContextProvider from "./context/SectionContext";
 import Section from './components/Sections/Section';
-import MenuLateral from './components/MenuLateral/MenuLateral'
+import MenuLateral from './components/MenuLateral/MenuLateral';
+import SetaProx from './components/SetaProximo/SetaProx'
 
 function App() {
     return (
@@ -16,6 +17,8 @@ function App() {
 
                     <MenuLateral/>
                 </main>
+
+                <SetaProx/>
             </SectionContextProvider>
         </div>
     );

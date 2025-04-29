@@ -1,29 +1,106 @@
-import { createContext, useEffect, useState } from "react";
+import { createContext, useEffect, useState, useRef, useCallback, useMemo  } from "react";
 
 export const SectionContext = createContext({})
 
 export default function SectionContextProvider({ children }){
     const [section, setSection] = useState('Home');
-    const slide = ['Home', 'Sobre'];
+    const slide =  useMemo(() => ['Home', 'Sobre', 'Habilidades'], []);
+    const isScrolling = useRef(false);
 
 
-    function proxSlide(){
-        let proxPosicao = slide.indexOf(section)
+    const proxSlide = useCallback(() => {
+        setSection(prev => {
+            const proxPosicao = slide.indexOf(prev);
+            if ((proxPosicao + 1) < slide.length) {
+                return slide[proxPosicao + 1];
+            } else {
+                return slide[proxPosicao];
+            }
+        });
+    }, [slide]);
+    
+    const antiSlide = useCallback(() => {
+        setSection(prev => {
+            const proxPosicao = slide.indexOf(prev);
+            if ((proxPosicao - 1) < 0) {
+                return slide[proxPosicao];
+            } else {
+                return slide[proxPosicao - 1];
+            }
+        });
+    }, [slide]);
 
-        setSection(slide[proxPosicao + 1])
-    }
+    useEffect(() => {
+        const handleWheel = (event) => {
+            if (!isScrolling.current) {
+                isScrolling.current = true;
+                
+                const direction = event.deltaY > 0 ? 'down' : 'up';
+                
+                if(direction === 'down'){
+                    proxSlide()
+                }else{
+                    antiSlide()
+                }
+                
+                
+                setTimeout(() => {
+                    isScrolling.current = false;
+                }, 1000);
+            }
+        };
 
-    useEffect(()=>{
+        window.addEventListener('wheel', handleWheel, { passive: true });
+        
+        return () => {
+            window.removeEventListener('wheel', handleWheel);
+        };
+    }, [antiSlide, proxSlide]);
 
-    //let setTop = document.querySelector(`.${section}`).offsetTop;
 
-    console.log(section)
+    useEffect(() => {
+        let touchStartY = 0;
+        let touchEndY = 0;
+    
+        const handleTouchStart = (event) => {
+            touchStartY = event.touches[0].clientY;
+        };
+    
+        const handleTouchEnd = () => {
+            const deltaY = touchStartY - touchEndY;
 
-    //document.documentElement.style.scrollBehavior = "smooth";
-    //document.documentElement.scrollTop = setTop;
-
-    }, [section])
-
+            if (!isScrolling.current && touchEndY > 50 ) {
+                isScrolling.current = true;
+    
+                const direction = deltaY > 0 ? 'down' : 'up';
+    
+                if (direction === 'down') {
+                    proxSlide();
+                } else {
+                    antiSlide();
+                }
+    
+                setTimeout(() => {
+                    isScrolling.current = false;
+                }, 1000);
+            }
+        };
+    
+        const handleTouchMove = (event) => {
+            touchEndY = event.touches[0].clientY;
+        };
+    
+        window.addEventListener('touchstart', handleTouchStart, { passive: true });
+        window.addEventListener('touchmove', handleTouchMove, { passive: true });
+        window.addEventListener('touchend', handleTouchEnd);
+    
+        return () => {
+            window.removeEventListener('touchstart', handleTouchStart);
+            window.removeEventListener('touchmove', handleTouchMove);
+            window.removeEventListener('touchend', handleTouchEnd);
+        };
+    }, [antiSlide, proxSlide]);
+    
     return(
         <SectionContext.Provider value={{ section, setSection, proxSlide }}>
             {children}
