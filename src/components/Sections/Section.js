@@ -30,6 +30,8 @@ export default function Section(){
                 <div className='espaco'></div>
 
                 <Habilidades/>
+
+                <div className='espaco'></div>
             </div>
         </div>
     )

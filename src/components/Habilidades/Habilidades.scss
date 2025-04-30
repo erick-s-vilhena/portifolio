@@ -1,4 +1,141 @@
-.Habidades{
+.Habilidades{
     width: 100%;
     height: 100%;
+
+    .main{
+        width: 100%;
+        height: 100%;
+        
+        display: flex;
+        flex-wrap: wrap;
+        position: absolute;
+        overflow: hidden;
+        align-items: start;
+        //background-color: rgba(255, 51, 0, 0.218);
+
+        .titulo{
+            display: flex;
+            width: 100%;
+            position: relative;
+            flex-direction: column;
+            justify-content: center;
+            //background-color: rgba(0, 255, 255, 0.118);
+            
+            h1{
+                text-align: center;
+                font-size: clamp(26px, 4vw, 36px);
+                margin-bottom: 10px;
+            }
+
+            .traco{
+                width: 100%;
+                height: 4px;
+                background-color: var(--cor-secun);
+            }
+        }
+
+        .container-box{
+            position: relative;
+            width: 100%;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            row-gap: 20px;
+            container-type: inline-size;
+            resize: none;
+            //background-color: rgba(0, 255, 4, 0.221);
+
+            .aux-box{
+                width: 25%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                @container (max-width: 600px) {
+                    width: calc(100% / 3);
+                }
+
+            
+                .box{
+                    width: 120px;
+                    height: 160px;
+                    padding: 10px;
+                    display: flex;
+                    flex-direction: column;
+                    background-color: var(--cor-prima-dk);
+                    border-radius: 5px;
+                    position: relative;
+                    overflow: hidden;
+                    transition: all 0.5s;
+
+                    &:hover{
+                        transform: scale(1.1);
+                    }
+
+                    @media screen and (max-width: 500px) {
+                        width: 100px;
+                        height: 130px;
+                    }
+
+                    &::before{
+                        content: '';
+                        position: absolute;
+                        top: -100%;
+                        left: -100%;
+                        width: 200%;
+                        height: 200%;
+                        background: linear-gradient(
+                            -45deg,
+                            transparent 30%,
+                            rgba(255, 255, 255, 0.3) 50%,
+                            transparent 70%
+                        );
+                        animation: light-sweep 5s linear infinite;
+                        pointer-events: none;
+
+                        @keyframes light-sweep {
+                            0% {
+                              transform: translate(-100%, -100%);
+                            }
+                            100% {
+                              transform: translate(100%, 100%);
+                            }
+                        }
+
+                        z-index: 10;
+                    }
+                
+                    .img{
+                        width: 100%;
+                        aspect-ratio: 1 / 1;
+                        display: flex;
+                        align-items: center;
+                        //background-color: red;
+                        container-type: size; 
+                        resize: none;
+                        z-index: 20;
+                
+                        img{
+                            width: 100%;
+                            height: 100%;
+                            object-fit: contain;
+                        }
+                    }
+                
+                    p{
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        flex-grow: 1;
+                        text-align: center;
+                        z-index: 20;
+                    }
+                }
+            }
+        }
+    }
 }
+
+
+
+

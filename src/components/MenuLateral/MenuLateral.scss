@@ -1,10 +1,16 @@
 .menu_lateral{
     width: 130px;
+    min-width: 50px;
     height: 100%;
     display: flex;
     align-items: center;
-    flex-shrink: 0;
+    flex-shrink: 1;
     //background-color: rgb(0, 103, 103);
+
+    @media only screen and (max-width: 1400px) {
+        width: auto;
+        flex-shrink: 0;
+    }
 
     @media only screen and (max-width: 768px) {
         display: none;

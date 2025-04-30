@@ -46,13 +46,13 @@ export default function SectionContextProvider({ children }){
                 
                 setTimeout(() => {
                     isScrolling.current = false;
-                }, 1000);
+                }, 1500);
             }
         };
 
         window.addEventListener('wheel', handleWheel, { passive: true });
         
-        return () => {
+        return () => { 
             window.removeEventListener('wheel', handleWheel);
         };
     }, [antiSlide, proxSlide]);

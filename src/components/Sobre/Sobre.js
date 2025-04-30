@@ -3,22 +3,10 @@ import Pontos from '../design/Pontos/Pontos';
 import Bolas from '../design/Bolas/Bolas';
 import SobreMobile from '../mobile/SobreMobile/SobreMobile';
 
-function boxHabilidade({img, titulo}){
-    return(
-        <div className='box'>
-            <div className='img'>
-                <img src={img}/>
-            </div>
-
-            <p>{titulo}</p>
-
-        </div>
-    )
-}
-
 export default function Sobre(){
     return(
         <div className='Sobre'>
+
             <SobreMobile/>
 
             <div className='desktop'>
@@ -36,8 +24,8 @@ export default function Sobre(){
                     </div>
 
                     <div className='fig'>
-
-                        <Pontos lf={20} tp={0} st={'st'}/>
+                        
+                        <Pontos lf={20} tp={60} st={'st'}/>
 
                         <Bolas bt={0} rt={20}/>
 

@@ -20,7 +20,7 @@
             grid-template-rows: 1fr 1fr;
 
             @media screen and (min-width: 768px){
-                justify-content: right;
+                justify-content: center;
             }
         }
 
@@ -130,7 +130,7 @@
             display: grid;
             align-items: center;
             position: relative;
-            resize: vertical;  /* opcional: pra testar no navegador */
+            resize: vertical; 
             overflow: auto;
             container-type: size; 
             resize: none;

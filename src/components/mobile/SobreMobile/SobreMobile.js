@@ -1,5 +1,4 @@
 import './SobreMobile.scss';
-import SetaProx from '../../SetaProximo/SetaProx';
 import Pontos from '../../design/Pontos/Pontos'
 import Bolas from '../../design/Bolas/Bolas'
 import { useState } from 'react';

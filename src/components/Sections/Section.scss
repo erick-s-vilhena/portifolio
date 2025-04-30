@@ -1,8 +1,11 @@
 .Section{
     flex-grow: 1;
+    max-width: 1220px;
+    margin: 0 auto;
     display: flex;
-    flex-direction: column;
+    flex-wrap: wrap;
     position: relative;
+    overflow: hidden;
     //background-color: rgba(4, 163, 163, 0.141);
 
     .interface{
