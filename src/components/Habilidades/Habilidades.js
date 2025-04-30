@@ -44,7 +44,7 @@ export default function Habilidades(){
 
                     <BoxHabilidade titulo={'CSS'} img={LogoCSS}/>
 
-                    <BoxHabilidade titulo={'React'} img={LogoREACT}/>
+                    <BoxHabilidade titulo={'React js'} img={LogoREACT}/>
 
                     <BoxHabilidade titulo={'Bootstrap'} img={LogoBt}/>
 

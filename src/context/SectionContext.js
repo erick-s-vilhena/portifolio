@@ -61,6 +61,8 @@ export default function SectionContextProvider({ children }){
     useEffect(() => {
         let touchStartY = 0;
         let touchEndY = 0;
+
+        console.log(touchStartY + ' ' + touchEndY)
     
         const handleTouchStart = (event) => {
             touchStartY = event.touches[0].clientY;
@@ -68,6 +70,11 @@ export default function SectionContextProvider({ children }){
     
         const handleTouchEnd = () => {
             const deltaY = touchStartY - touchEndY;
+
+            console.log(touchStartY)
+            console.log(touchEndY)
+            console.log(deltaY)
+
 
             if (!isScrolling.current && touchEndY > 50 ) {
                 isScrolling.current = true;

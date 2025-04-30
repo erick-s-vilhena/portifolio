@@ -67,6 +67,7 @@
                     position: relative;
                     overflow: hidden;
                     transition: all 0.5s;
+                    cursor: pointer;
 
                     &:hover{
                         transform: scale(1.1);
@@ -77,34 +78,7 @@
                         height: 130px;
                     }
 
-                    &::before{
-                        content: '';
-                        position: absolute;
-                        top: -100%;
-                        left: -100%;
-                        width: 200%;
-                        height: 200%;
-                        background: linear-gradient(
-                            -45deg,
-                            transparent 30%,
-                            rgba(255, 255, 255, 0.3) 50%,
-                            transparent 70%
-                        );
-                        animation: light-sweep 5s linear infinite;
-                        pointer-events: none;
-
-                        @keyframes light-sweep {
-                            0% {
-                              transform: translate(-100%, -100%);
-                            }
-                            100% {
-                              transform: translate(100%, 100%);
-                            }
-                        }
-
-                        z-index: 10;
-                    }
-                
+                  
                     .img{
                         width: 100%;
                         aspect-ratio: 1 / 1;
