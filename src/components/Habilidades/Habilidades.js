@@ -7,12 +7,16 @@ import LogoBt from '../../img/Bootstrap.png';
 import LogoSASS from '../../img/sass.png';
 import LogoFIGMA from '../../img/Figma.png';
 import LogoNODE from '../../img/node.png';
+import { useContext } from 'react';
+import { SectionContext } from '../../context/SectionContext'
 
 
 function BoxHabilidade({img, titulo}){
+    const { section } = useContext(SectionContext)
+
     return(
-        <div className='aux-box'>
-                <div className='box'>
+        <div className={`aux-box ${section === 'Habilidades'}`}>
+                <div className={`box ${section === 'Habilidades'}`}>
                     <div className='img'>
                         <img src={img} alt={img}/>
                     </div>
@@ -24,8 +28,7 @@ function BoxHabilidade({img, titulo}){
     )
 }
 
-export default function Habilidades(){
-    
+export default function Habilidades(){    
     return(
         <div className='Habilidades'>
 

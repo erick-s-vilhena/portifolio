@@ -2,17 +2,21 @@ import './Sobre.scss';
 import Pontos from '../design/Pontos/Pontos';
 import Bolas from '../design/Bolas/Bolas';
 import SobreMobile from '../mobile/SobreMobile/SobreMobile';
+import { useContext } from 'react';
+import { SectionContext } from '../../context/SectionContext';
 
 export default function Sobre(){
+    const { section } = useContext(SectionContext)
+
     return(
         <div className='Sobre'>
 
             <SobreMobile/>
 
             <div className='desktop'>
-                <div className='sobre-mim'>
+                <div className={`sobre-mim`}>
 
-                    <div className='texto'>
+                    <div className={`texto ${section !== 'Sobre'}`}>
                         <h1>
                             Um pouco sobre mim
                             <div className='traco'></div>
@@ -43,7 +47,7 @@ export default function Sobre(){
                     </div> 
 
 
-                    <div className='texto'>
+                    <div className={`texto ${section !== 'Sobre'}`}>
                         <h1>
                             Onde estou
                             <div className='traco'></div>

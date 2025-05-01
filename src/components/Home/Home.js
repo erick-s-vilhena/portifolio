@@ -4,8 +4,12 @@ import { CgMail } from 'react-icons/cg'
 import { TbFileCv } from 'react-icons/tb'
 import Escada from '../design/Escada/Escada'
 import  Perfil  from '../../img/perfil.png'
+import { useContext } from 'react'
+import { SectionContext } from '../../context/SectionContext'
 
 export default function Home(){
+    const { section } = useContext(SectionContext)
+
     return(
         <div className='Home'>
              <div className='desktop'>
@@ -45,7 +49,7 @@ export default function Home(){
                 </div>{/*apresentacao*/}
 
                 <div className='perfil'>
-                    <div className='aux' >
+                    <div className={`aux ${section === 'Home'}`} >
                         <div className='foto'>
                             <img src={Perfil} alt='foto de perfil'/>
                         </div>

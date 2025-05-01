@@ -21,10 +21,28 @@
             justify-content: center;
             //background-color: aqua;
         }
+
+        .sobre-mim{
+            .texto.true{
+                left: -100%;
+                filter: opacity(0);
+            }
+        }
+
+        .onde-estou{
+            .texto.true{
+                left: 100%;
+                filter: opacity(0);
+            }
+        }
         
         .texto{
             margin-bottom: 20px;
             text-align: justify;
+            position: relative;
+            left: 0;
+            filter: opacity(1);
+            transition: all 1s;
 
             h1{
                 white-space: nowrap;
@@ -62,7 +80,8 @@
             }
 
             .st{
-                width: 50%;
+                width: 50% !important;
+                max-width: 260px;
 
 
             }

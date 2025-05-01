@@ -46,7 +46,7 @@ export default function SectionContextProvider({ children }){
                 
                 setTimeout(() => {
                     isScrolling.current = false;
-                }, 1500);
+                }, 2000);
             }
         };
 
@@ -61,8 +61,7 @@ export default function SectionContextProvider({ children }){
     useEffect(() => {
         let touchStartY = 0;
         let touchEndY = 0;
-
-        console.log(touchStartY + ' ' + touchEndY)
+        let prevTouchAndY = 0;
     
         const handleTouchStart = (event) => {
             touchStartY = event.touches[0].clientY;
@@ -71,12 +70,7 @@ export default function SectionContextProvider({ children }){
         const handleTouchEnd = () => {
             const deltaY = touchStartY - touchEndY;
 
-            console.log(touchStartY)
-            console.log(touchEndY)
-            console.log(deltaY)
-
-
-            if (!isScrolling.current && touchEndY > 50 ) {
+            if (!isScrolling.current && touchEndY !== prevTouchAndY) {
                 isScrolling.current = true;
     
                 const direction = deltaY > 0 ? 'down' : 'up';
@@ -90,6 +84,8 @@ export default function SectionContextProvider({ children }){
                 setTimeout(() => {
                     isScrolling.current = false;
                 }, 1000);
+
+                prevTouchAndY = touchEndY;
             }
         };
     
