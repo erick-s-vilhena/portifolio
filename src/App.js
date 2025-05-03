@@ -5,20 +5,25 @@ import SectionContextProvider from "./context/SectionContext";
 import Section from './components/Sections/Section';
 import MenuLateral from './components/MenuLateral/MenuLateral';
 import SetaProx from './components/SetaProximo/SetaProx'
+import HabilidadeContextProvider from './context/HabilidadeContext';
 
 function App() {
     return (
         <div className="App">
             <SectionContextProvider>
-                <Header/>
+                <HabilidadeContextProvider>
 
-                <main>
-                    <Section/>
+                    <Header/>
 
-                    <MenuLateral/>
-                </main>
+                    <main>
+                        <Section/>
 
-                <SetaProx/>
+                        <MenuLateral/>
+                    </main>
+
+                    <SetaProx/>
+
+                </HabilidadeContextProvider>
             </SectionContextProvider>
         </div>
     );

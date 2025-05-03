@@ -9,14 +9,20 @@ import LogoFIGMA from '../../img/Figma.png';
 import LogoNODE from '../../img/node.png';
 import { useContext } from 'react';
 import { SectionContext } from '../../context/SectionContext'
+import PopHabilidade from '../PopHabilidade/PopHabilidade';
+import { HabilidadeContext } from '../../context/HabilidadeContext';
 
 
 function BoxHabilidade({img, titulo}){
     const { section } = useContext(SectionContext)
+    
+    const { setHabilidade } = useContext(HabilidadeContext)
 
     return(
         <div className={`aux-box ${section === 'Habilidades'}`}>
-                <div className={`box ${section === 'Habilidades'}`}>
+
+                <div className={`box ${section === 'Habilidades'}`}
+                onClick={()=>{ setHabilidade({titulo: titulo, img: img}) }}>
                     <div className='img'>
                         <img src={img} alt={img}/>
                     </div>
@@ -33,6 +39,7 @@ export default function Habilidades(){
         <div className='Habilidades'>
 
             <div className='main'>
+                <PopHabilidade/>
 
                 <div className='titulo'>
                     <h1>Minhas habilidades</h1>
@@ -56,6 +63,8 @@ export default function Habilidades(){
                     <BoxHabilidade titulo={'Figma'} img={LogoFIGMA}/>
 
                     <BoxHabilidade titulo={'Node js'} img={LogoNODE}/>
+
+                    
                 </div>
             </div>
         </div>

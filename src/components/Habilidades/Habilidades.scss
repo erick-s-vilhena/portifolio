@@ -83,10 +83,11 @@
                     border-radius: 5px;
                     position: relative;
                     overflow: hidden;
-                    transition: all 0.2s;
+                    transition: all 0.2s    ;
 
                     &:hover{
                         transform: scale(1.1);
+                        background-color: var(--cor-secun-dk)
                     }
 
                     @media screen and (max-width: 500px) {
