@@ -23,7 +23,11 @@ export default function SobreMobile(){
 
 
                         <div className='texto_sobre'>
-                            <h1>Um pouco sobre mim</h1>
+                            <h1>
+                                Um pouco sobre mim
+                                <div className='traco'></div>
+                            </h1>
+
                             <p>Olá! Sou o Erick, um desenvolvedor em formação com paixão por tecnologia, música, animais e jogos. Desde criança, sempre fui curioso para entender como as coisas funcionam, desmontando aparelhos eletrônicos só para explorar seus segredos. Essa curiosidade se transformou em um interesse genuíno por programação, que começou em setembro de 2022 com o desenvolvimento Front-End, área onde encontrei o equilíbrio ideal entre criatividade, lógica e resolução de problemas.
                             </p>
                         </div>
@@ -31,6 +35,7 @@ export default function SobreMobile(){
                         <div className='texto_onde'>
                             <h1>
                                 Onde estou
+                                <div className='traco'></div>
                             </h1>
 
                             <p>

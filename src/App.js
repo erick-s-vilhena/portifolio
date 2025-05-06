@@ -4,7 +4,6 @@ import Header from './components/Header/Header';
 import SectionContextProvider from "./context/SectionContext";
 import Section from './components/Sections/Section';
 import MenuLateral from './components/MenuLateral/MenuLateral';
-import SetaProx from './components/SetaProximo/SetaProx'
 import HabilidadeContextProvider from './context/HabilidadeContext';
 
 function App() {
@@ -20,8 +19,6 @@ function App() {
 
                         <MenuLateral/>
                     </main>
-
-                    <SetaProx/>
 
                 </HabilidadeContextProvider>
             </SectionContextProvider>

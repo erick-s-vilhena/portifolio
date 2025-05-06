@@ -6,13 +6,14 @@ import Escada from '../design/Escada/Escada'
 import  Perfil  from '../../img/perfil.png'
 import { useContext } from 'react'
 import { SectionContext } from '../../context/SectionContext'
+import SetaProx from '../SetaProximo/SetaProx'
 
 export default function Home(){
     const { section } = useContext(SectionContext)
 
     return(
         <div className='Home'>
-             <div className='desktop'>
+            <div className='desktop'>
                 
                 <div className='apresentacao'>
                     <div className='center'>
@@ -71,7 +72,9 @@ export default function Home(){
 
                 </div>
 
-             </div>
+            </div>
+
+            <SetaProx/>
         </div>
     )
 }

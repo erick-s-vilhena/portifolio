@@ -1,6 +1,7 @@
 import Home from '../Home/Home';
 import Sobre from '../Sobre/Sobre';
-import Habilidades from '../Habilidades/Habilidades'
+import Habilidades from '../Habilidades/Habilidades';
+import Projetos from '../Projetos/Projetos'
 import './Section.scss';
 import { useContext, useEffect, useState } from 'react';
 import { SectionContext } from '../../context/SectionContext';
@@ -32,6 +33,8 @@ export default function Section(){
                 <Habilidades/>
 
                 <div className='espaco'></div>
+
+                <Projetos/>
             </div>
         </div>
     )

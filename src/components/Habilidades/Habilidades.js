@@ -17,7 +17,7 @@ function BoxHabilidade({img, titulo}){
     const { section } = useContext(SectionContext)
     
     const { setHabilidade } = useContext(HabilidadeContext)
-
+    
     return(
         <div className={`aux-box ${section === 'Habilidades'}`}>
 
@@ -34,7 +34,8 @@ function BoxHabilidade({img, titulo}){
     )
 }
 
-export default function Habilidades(){    
+export default function Habilidades(){   
+    
     return(
         <div className='Habilidades'>
 
@@ -54,7 +55,7 @@ export default function Habilidades(){
 
                     <BoxHabilidade titulo={'CSS'} img={LogoCSS}/>
 
-                    <BoxHabilidade titulo={'React js'} img={LogoREACT}/>
+                    <BoxHabilidade titulo={'React'} img={LogoREACT}/>
 
                     <BoxHabilidade titulo={'Bootstrap'} img={LogoBt}/>
 
@@ -62,9 +63,7 @@ export default function Habilidades(){
 
                     <BoxHabilidade titulo={'Figma'} img={LogoFIGMA}/>
 
-                    <BoxHabilidade titulo={'Node js'} img={LogoNODE}/>
-
-                    
+                    <BoxHabilidade titulo={'Node'} img={LogoNODE}/>
                 </div>
             </div>
         </div>

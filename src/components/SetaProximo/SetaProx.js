@@ -1,34 +1,18 @@
 import { RiArrowDownDoubleFill } from 'react-icons/ri'
 import './SetaProx.scss'
-import { useContext, useEffect, useMemo, useState } from 'react';
+import { useContext } from 'react';
 import { SectionContext } from '../../context/SectionContext';
 
 export default function SetaProx(){
 
-    const { section, proxSlide } = useContext(SectionContext);
-
-    const [text, setText] = useState('')
-
-    const texto = useMemo(() => ({
- 
-        Home: 'click aqui',
-        Sobre: 'continue',
-        Habilidades: 'mais um pouco'
-     
-    }), [])
-
-    useEffect(()=>{
-        if (texto[section]) {
-            setText(texto[section]);
-        }
-    }, [section, texto])
+    const { proxSlide } = useContext(SectionContext);
 
     return(
         <div className='seta'>
             <div className='center'>
 
                 <button onClick={()=> proxSlide()}>
-                    {text}
+                    click aqui
                 </button>
 
                 <div className='icon_seta'>

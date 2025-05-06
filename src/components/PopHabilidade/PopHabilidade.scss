@@ -12,7 +12,6 @@
     position: absolute;
     width: calc(100% - 10px);
     max-width: 500px;
-    aspect-ratio: 1 / 1;
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
@@ -45,7 +44,7 @@
     }
     
     .img{
-        width: 35%;
+        width: 30%;
         aspect-ratio: 1 / 1;
         margin: 0 auto;
 
@@ -60,5 +59,13 @@
         font-size:clamp(24px, 5vw, 30px); 
         text-align: center;
         color: var(--cor-titulo);
+        margin: 10px;
+    }
+
+    p{
+        text-align: justify;
+        margin: 0 10px;
+        margin-bottom: 20px;
+        font-size: clamp(14px, 2vw, 16px);
     }
 }

@@ -31,17 +31,21 @@
         @keyframes cor {
             0%, 50%{
                 background-color: var(--cor-secun);
+                border-radius: 50%;
             }
 
             51%, 100%{
                 background-color: var(--cor-prima);
+                border-radius: 50%;
             }
 
             0%, 1%{
                 transform: scale(1.4);
+                border-radius: 0;
             }
 
             49%, 50%{
+                border-radius: 0;
                 transform: scale(1);
             }
         }

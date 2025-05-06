@@ -4,7 +4,7 @@ export const SectionContext = createContext({})
 
 export default function SectionContextProvider({ children }){
     const [section, setSection] = useState('Home');
-    const slide =  useMemo(() => ['Home', 'Sobre', 'Habilidades'], []);
+    const slide =  useMemo(() => ['Home', 'Sobre', 'Habilidades', 'Projetos'], []);
     const isScrolling = useRef(false);
 
 
@@ -70,7 +70,9 @@ export default function SectionContextProvider({ children }){
         const handleTouchEnd = () => {
             const deltaY = touchStartY - touchEndY;
 
-            if (!isScrolling.current && touchEndY !== prevTouchAndY) {
+            //console.log(touchStartY + ' ' + touchEndY + ' ' + prevTouchAndY + ' ' + deltaY)
+
+            if (!isScrolling.current && touchEndY !== prevTouchAndY && Math.abs(deltaY) > 100) {
                 isScrolling.current = true;
     
                 const direction = deltaY > 0 ? 'down' : 'up';
