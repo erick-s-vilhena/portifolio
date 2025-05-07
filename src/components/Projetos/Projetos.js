@@ -1,3 +1,4 @@
+import { MdKeyboardDoubleArrowLeft, MdKeyboardDoubleArrowRight } from 'react-icons/md'
 import './Projetos.scss'
 
 export default function Projetos(){
@@ -5,10 +6,30 @@ export default function Projetos(){
         <div className='Projetos'>
             
             <main>
-                <h1>A jornada até aqui</h1>
+                <h1>
+                    A jornada até aqui
+                    <div className='traco'></div>
+                </h1>
 
                 <section>
-                    a
+                    <div className='container-projetos'>
+                        
+                    </div>
+
+                    
+                    <nav>
+
+                        <button className='left'>
+                            <MdKeyboardDoubleArrowLeft className='icon'/>
+                            antes
+                        </button>
+
+                        <button className='right'>
+                            agora 
+                            <MdKeyboardDoubleArrowRight className='icon'/>
+                        </button>
+
+                    </nav>
                 </section>
             </main>
 
