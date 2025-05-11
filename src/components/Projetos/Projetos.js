@@ -1,7 +1,33 @@
 import { MdKeyboardDoubleArrowLeft, MdKeyboardDoubleArrowRight } from 'react-icons/md'
-import './Projetos.scss'
+import './Projetos.scss';
 
 export default function Projetos(){
+    
+    function BoxProjeto(){
+        return (
+            <div className='box-projeto'>
+                <div className='decoracao sup'>
+
+                </div>
+
+                <div className='projeto-sigle'>
+                    
+                </div>
+
+                <div className='decoracao bot'>
+                    <div className='plug-anterior'></div>
+
+                    <div className='aux'>
+                        <div className='plug-atual'></div>
+
+                        <div className='linha'></div>
+                    </div>
+                </div>
+            </div>
+        )
+    }
+
+
     return(
         <div className='Projetos'>
             
@@ -13,7 +39,17 @@ export default function Projetos(){
 
                 <section>
                     <div className='container-projetos'>
-                        
+
+                        <BoxProjeto/>
+
+                        <BoxProjeto/>
+
+                        <BoxProjeto/>
+
+                        <BoxProjeto/>
+
+                        <BoxProjeto/>   
+
                     </div>
 
                     
