@@ -51,14 +51,14 @@
                     display: flex;
                     flex-direction: column;
                     align-items: end;
-                    background-color: rgba(0, 255, 255, 0.167);
+                    //background-color: rgba(0, 255, 255, 0.167);
 
                     @for $i from 1 through 30{
 
                         @if $i % 2 == 0{
                             &:nth-child(#{$i}){
                                 justify-content: end;
-                                background-color: rgba(85, 255, 0, 0.167);
+                                //background-color: rgba(85, 255, 0, 0.167);
 
                                 .decoracao.bot{
                                     display: none;
@@ -68,8 +68,8 @@
                         @else{
                             &:nth-child(#{$i}){
                                 justify-content: start;
-                                background-color: rgba(212, 255, 0, 0.167);
-
+                                //background-color: rgba(212, 255, 0, 0.167);
+                                
                                 .decoracao.sup{
                                     display: none;
                                 }
@@ -80,8 +80,9 @@
                     .projeto-sigle{
                         width: calc(100% - 10px);
                         height: 300px;
-                        background-color: gray;
+                        background-color: rgb(206, 206, 206);
                         border-radius: 5px;
+                        z-index: 20;
                     }
 
                     .decoracao{
@@ -91,35 +92,157 @@
                         align-items: center;
                         //background-color: rgba(128, 0, 0, 0.197);
 
-                        .plug-anterior{
-                            width: 10px;
-                            height: 80px;
-                            background-color: var(--cor-prima);
-                            border-radius: 0 5px 5px 0;
-                        }
+                        $cor-linha: var(--cor-prima-dk);
 
-                        .aux{
-                            height: 100%;
-                            flex-grow: 1;
-                            display: flex;
-                            flex-direction: column;
-                            //background-color: rgba(255, 228, 196, 0.171);
-                            
-                            .plug-atual{
-                                width: 80px;
-                                height: 10px;
+                        &.sup{
+                            .plug-anterior{
+                                width: 10px;
+                                height: 80px;
                                 background-color: var(--cor-prima);
-                                border-radius: 0 0 5px 5px;
-                                align-self: center;
+                                border-radius: 0 5px 5px 0;
+                                z-index: 20;
                             }
 
-                            .linha{
-                                width: calc(50% + 10px);
-                                height: calc(50%);
-                                border-right: 20px solid var(--cor-secun);
-                                border-bottom: 20px solid var(--cor-secun);
-                                border-radius: 0 0 40px 0;
-                                //background-color: blueviolet;
+                            .aux{
+                                height: 100%;
+                                flex-grow: 1;
+                                display: flex;
+                                flex-direction: column-reverse;
+                                //  background-color: rgba(255, 228, 196, 0.171);
+
+                                .plug-atual{
+                                    width: 80px;
+                                    height: 10px;
+                                    background-color: var(--cor-prima);
+                                    border-radius: 5px 5px 0px 0px;
+                                    align-self: center;
+                                    z-index: 20;
+                                }
+
+                                .linha{
+                                    width: calc(50% + 10px);
+                                    height: calc(50%);
+                                    border-top: 20px solid $cor-linha;
+                                    border-right: 20px solid $cor-linha;
+                                    border-radius: 0 40px 0 0;
+                                    position: relative;
+                                    z-index: 10;
+                                    //background-color: blueviolet;
+
+                                    .bola{
+                                        width: 20px;
+                                        height: 20px;
+                                        //background-color: var(--cor-secun);
+                                        position: absolute;
+                                        transition: all 2s;
+                                        transform-origin: 0px 40px;
+                                        animation: percuso 4s linear infinite;
+                                        display: flex;
+                                        align-items: center;
+                                        justify-content: center;     
+                                        font-size: 40px;
+                                        //overflow: auto;
+                                        
+                                        @keyframes percuso {
+                                            0%{
+                                                transform: translate(-40px, -20px);
+                                            }
+
+                                            40%{
+                                                transform: translate(115px, -20px);
+                                            }
+
+                                            60%{
+                                                transform: translate(115px, -20px) rotate(90deg);
+                                            }
+
+                                            100%{
+                                                transform: translate(115px, 100px) rotate(90deg);
+                                            }
+                                        }
+
+                                        svg{
+                                            fill: var(--cor-secun);
+                                        }
+                                    }
+                                }
+                            }
+                        }
+
+                        &.bot{
+                            .plug-anterior{
+                                width: 10px;
+                                height: 80px;
+                                background-color: var(--cor-prima);
+                                border-radius: 0 5px 5px 0;
+                                z-index: 20;
+                            }
+
+                            .aux{
+                                height: 100%;
+                                flex-grow: 1;
+                                display: flex;
+                                flex-direction: column;
+                                //background-color: rgba(255, 228, 196, 0.171);
+                                
+                                .plug-atual{
+                                    width: 80px;
+                                    height: 10px;
+                                    background-color: var(--cor-prima);
+                                    border-radius: 0 0 5px 5px;
+                                    align-self: center;
+                                    z-index: 20;
+                                }
+
+                                .linha{
+                                    width: calc(50% + 10px);
+                                    height: calc(50%);
+                                    border-right: 20px solid $cor-linha;
+                                    border-bottom: 20px solid $cor-linha;
+                                    border-radius: 0 0 40px 0;
+                                    //background-color: rgb(52, 23, 79);
+                                    position: relative;
+
+                                    .bola{
+                                        width: 20px;
+                                        height: 20px;
+                                        position: absolute;
+                                        transition: all 2s;
+                                        transform-origin: 0px -40px;
+                                        animation: percuso-bot 4s linear infinite;
+                                        display: flex;
+                                        align-items: center;
+                                        justify-content: center;     
+                                        font-size: 40px;
+                                        bottom: 0;
+                                        left: 0;
+                                        z-index: 10;
+                                        //background-color: var(--cor-secun);
+                                        //overflow: auto;
+                                        
+                                        @keyframes percuso-bot {
+                                            0%{
+                                                transform: translate(-40px,  20px);
+                                            }
+
+                                            40%{
+                                                transform: translate(112px, 20px);
+                                            }
+
+                                            60%{
+                                                transform: translate(95px, 20px) rotate(-90deg);
+                                            }
+
+                                            100%{
+                                                transform: translate(95px, -100px) rotate(-90deg);
+                                            }
+                                        }
+
+                                        svg{
+                                            fill: var(--cor-secun);
+                                        }
+                                    }
+                                }
                             }
                         }
                     }

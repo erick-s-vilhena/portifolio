@@ -1,4 +1,5 @@
 import { MdKeyboardDoubleArrowLeft, MdKeyboardDoubleArrowRight } from 'react-icons/md'
+import { IoIosArrowForward } from "react-icons/io";
 import './Projetos.scss';
 
 export default function Projetos(){
@@ -6,12 +7,32 @@ export default function Projetos(){
     function BoxProjeto(){
         return (
             <div className='box-projeto'>
-                <div className='decoracao sup'>
 
+                <div className='decoracao sup'>
+                    <div className='plug-anterior'></div>
+
+                    <div className='aux'>
+                        <div className='plug-atual'></div>
+
+                        <div className='linha'>
+
+                            <div className='bola'>
+                                <svg width="20" height="20" xmlns="http://www.w3.org/2000/svg">
+                                    <polygon points="0,0 
+                                            10,0 
+                                            20,10
+                                            10,20
+                                            0,20
+                                            10,10
+                                            "/>
+                                </svg>
+                            </div>
+
+                        </div>
+                    </div>
                 </div>
 
                 <div className='projeto-sigle'>
-                    
                 </div>
 
                 <div className='decoracao bot'>
@@ -20,7 +41,21 @@ export default function Projetos(){
                     <div className='aux'>
                         <div className='plug-atual'></div>
 
-                        <div className='linha'></div>
+                        <div className='linha'>
+
+                            <div className='bola'>
+                                <svg width="20" height="20" xmlns="http://www.w3.org/2000/svg">
+                                    <polygon points="0,0 
+                                            10,0 
+                                            20,10
+                                            10,20
+                                            0,20
+                                            10,10
+                                            "/>
+                                </svg>
+                            </div>
+
+                        </div>
                     </div>
                 </div>
             </div>
