@@ -1,6 +1,7 @@
 import { MdKeyboardDoubleArrowLeft, MdKeyboardDoubleArrowRight } from 'react-icons/md'
-import { IoIosArrowForward } from "react-icons/io";
+import Escada from '../design/Escada/Escada'
 import './Projetos.scss';
+import Nivelamento from '../../img/nivelamento.png';
 
 export default function Projetos(){
     
@@ -10,6 +11,8 @@ export default function Projetos(){
 
                 <div className='decoracao sup'>
                     <div className='plug-anterior'></div>
+
+                    <Escada st="st"/>
 
                     <div className='aux'>
                         <div className='plug-atual'></div>
@@ -33,10 +36,13 @@ export default function Projetos(){
                 </div>
 
                 <div className='projeto-sigle'>
+                    <img src={ Nivelamento }/>
                 </div>
 
                 <div className='decoracao bot'>
                     <div className='plug-anterior'></div>
+
+                    <Escada st="st"/>
 
                     <div className='aux'>
                         <div className='plug-atual'></div>

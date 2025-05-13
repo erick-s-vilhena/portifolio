@@ -39,10 +39,10 @@
                 position: relative;
                 width: 100%;
                 flex-grow: 1;
-                border: 2px solid rgba(0, 255, 255, 0.167);
                 display: flex;
                 justify-content: right;
                 overflow: auto;
+                //border: 2px solid rgba(0, 255, 255, 0.167);
 
                 .box-projeto{
                     flex-shrink: 0;
@@ -75,6 +75,14 @@
                                 }
                             }
                         }
+
+                        &:nth-child(#{$i}){
+
+                            .bola{
+                                animation-delay: 1s * $i !important;
+                            }
+
+                        }
                     }
 
                     .projeto-sigle{
@@ -83,6 +91,11 @@
                         background-color: rgb(206, 206, 206);
                         border-radius: 5px;
                         z-index: 20;
+                        padding: 10px;
+
+                        img{
+                            width: 100%;
+                        }
                     }
 
                     .decoracao{
@@ -90,6 +103,7 @@
                         flex-grow: 1;
                         display: flex;
                         align-items: center;
+                        position: relative;
                         //background-color: rgba(128, 0, 0, 0.197);
 
                         $cor-linha: var(--cor-prima-dk);
@@ -101,6 +115,16 @@
                                 background-color: var(--cor-prima);
                                 border-radius: 0 5px 5px 0;
                                 z-index: 20;
+                            }
+
+                            .st{
+                                
+                                right: 40px;
+                                top: 20px;
+                                       
+                                .dg{
+                                    border-color: var(--cor-secun)
+                                }   
                             }
 
                             .aux{
@@ -132,8 +156,9 @@
                                     .bola{
                                         width: 20px;
                                         height: 20px;
-                                        //background-color: var(--cor-secun);
                                         position: absolute;
+                                        left: -40px;
+                                        top: -20px;
                                         transition: all 2s;
                                         transform-origin: 0px 40px;
                                         animation: percuso 4s linear infinite;
@@ -141,23 +166,24 @@
                                         align-items: center;
                                         justify-content: center;     
                                         font-size: 40px;
+                                        //background-color: var(--cor-secun);
                                         //overflow: auto;
                                         
                                         @keyframes percuso {
                                             0%{
-                                                transform: translate(-40px, -20px);
+                                                transform: translate(0, 0);
                                             }
 
-                                            40%{
-                                                transform: translate(115px, -20px);
+                                            5%{
+                                                transform: translate(155px, 0px);
                                             }
 
-                                            60%{
-                                                transform: translate(115px, -20px) rotate(90deg);
+                                            10%{
+                                                transform: translate(155px, 0px) rotate(90deg);
                                             }
 
-                                            100%{
-                                                transform: translate(115px, 100px) rotate(90deg);
+                                            15%,100%{
+                                                transform: translate(155px, 100px) rotate(90deg);
                                             }
                                         }
 
@@ -176,6 +202,16 @@
                                 background-color: var(--cor-prima);
                                 border-radius: 0 5px 5px 0;
                                 z-index: 20;
+                            }
+
+                            .st{
+                                bottom: 20px;
+                                right: 40px;
+                                transform: rotate(-90deg);
+
+                                .dg{
+                                    border-color: var(--cor-secun);
+                                }
                             }
 
                             .aux{
@@ -214,27 +250,27 @@
                                         align-items: center;
                                         justify-content: center;     
                                         font-size: 40px;
-                                        bottom: 0;
-                                        left: 0;
+                                        bottom: -20px;
+                                        left: -40px;
                                         z-index: 10;
                                         //background-color: var(--cor-secun);
                                         //overflow: auto;
                                         
                                         @keyframes percuso-bot {
                                             0%{
-                                                transform: translate(-40px,  20px);
+                                                transform: translate(0, 0);
                                             }
 
-                                            40%{
-                                                transform: translate(112px, 20px);
+                                            5%{
+                                                transform: translate(135px, 0);
                                             }
 
-                                            60%{
-                                                transform: translate(95px, 20px) rotate(-90deg);
+                                            10%{
+                                                transform: translate(135px, 20px) rotate(-90deg);
                                             }
 
-                                            100%{
-                                                transform: translate(95px, -100px) rotate(-90deg);
+                                            15%, 100%{
+                                                transform: translate(135px, -100px) rotate(-90deg);
                                             }
                                         }
 
