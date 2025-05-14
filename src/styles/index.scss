@@ -6,6 +6,7 @@ html, body{
 }
 
 
+
 :root {
   --cor-bg: #16161A;
   --cor-prima: #1DCD9F;
@@ -14,6 +15,15 @@ html, body{
   --cor-secun-dk: rgba(128, 0, 128, 0.2);
   --cor-titulo: #FDFDFD;
   --cor-texto: #9daabb;
+
+  --js: #fbd725;
+  --html: #f16529;
+  --css: #2965f1;
+  --react: #53c0de;
+  --bt: #7909f7;
+  --sass: #cc6699;
+  --fg: #0acf83;
+  --node: #21a366;
 }
 
 [data-theme="dark"] {

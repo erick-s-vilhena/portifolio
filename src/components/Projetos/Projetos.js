@@ -1,11 +1,17 @@
 import { MdKeyboardDoubleArrowLeft, MdKeyboardDoubleArrowRight } from 'react-icons/md'
 import Escada from '../design/Escada/Escada'
 import './Projetos.scss';
+import Pri_LaniPage from '../../img/lg-1.png';
+import Seg_LaniPage from '../../img/lg-2.png';
+import Tri_LaniPage from '../../img/lg-3.png';
+
 import Nivelamento from '../../img/nivelamento.png';
+
+
 
 export default function Projetos(){
     
-    function BoxProjeto(){
+    function BoxProjeto({img, link, titulo, habilidade}){
         return (
             <div className='box-projeto'>
 
@@ -36,7 +42,21 @@ export default function Projetos(){
                 </div>
 
                 <div className='projeto-sigle'>
-                    <img src={ Nivelamento }/>
+                    <img src={ img }/>
+
+                    <h3>{titulo}</h3>
+                    
+                    <div className='habilidades-usadas'>
+            
+                        {Array.isArray(habilidade) && habilidade.map(hab => {
+                            return(
+                                <p className={hab}>{hab}</p>
+                            )
+                        })}
+
+                    </div>
+
+                    <a href={link} target='blank_'>Acessar</a>
                 </div>
 
                 <div className='decoracao bot'>
@@ -81,16 +101,35 @@ export default function Projetos(){
                 <section>
                     <div className='container-projetos'>
 
-                        <BoxProjeto/>
+                        <BoxProjeto
+                            img={Pri_LaniPage}
+                            titulo={'1º Landing Page'}
+                            link={'./'}
+                            habilidade={['HTML', 'CSS']}
+                        />
 
-                        <BoxProjeto/>
+                        <BoxProjeto
+                            img={Seg_LaniPage}
+                            titulo={'2º Landing Page'}
+                            link={'./'}
+                            habilidade={['HTML', 'CSS']}
+                        />
 
-                        <BoxProjeto/>
+                        <BoxProjeto
+                            img={Tri_LaniPage}
+                            titulo={'3º Landing Page'}
+                            link={'./'}
+                            habilidade={['JavaScript', 'HTML', 'CSS']}
+                        />
 
-                        <BoxProjeto/>
-
-                        <BoxProjeto/>   
-
+                        <BoxProjeto
+                            img={Nivelamento}
+                            titulo={"Nivelamento 2025"}
+                            link={'https://nivelamentoitec.ufpa.br/'}
+                            habilidade={['JavaScript', 'HTML', 'CSS']}
+                        />
+                        
+                        
                     </div>
 
                     

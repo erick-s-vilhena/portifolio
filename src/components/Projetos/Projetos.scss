@@ -41,6 +41,7 @@
                 flex-grow: 1;
                 display: flex;
                 justify-content: right;
+                padding: 4px;
                 overflow: auto;
                 //border: 2px solid rgba(0, 255, 255, 0.167);
 
@@ -83,18 +84,102 @@
                             }
 
                         }
+
+                        &:nth-child(1){
+                            //background-color: red;
+
+                            .plug-anterior{
+                                display: none;
+                            }
+
+                            .aux{
+                                display: none !important;
+                            }
+                            
+                        }
                     }
 
                     .projeto-sigle{
                         width: calc(100% - 10px);
                         height: 300px;
-                        background-color: rgb(206, 206, 206);
+                        background-color: var(--cor-bg);
+                        //border: 2px solid var(--cor-texto);
+                        box-shadow: 0px 0px 5px var(--cor-secun);
+                        border: 1px solid var(--cor-secun);
                         border-radius: 5px;
                         z-index: 20;
-                        padding: 10px;
+                        padding: 5px;
+                        display: flex;
+                        flex-direction: column;
 
                         img{
+                            border-radius: 5px;
                             width: 100%;
+                        }
+
+                        h3{
+                            text-align: center;
+                            padding: 10px 0 5px 0;
+                            color: var(--cor-titulo);
+                        }
+
+                        .habilidades-usadas{
+                            flex-grow: 1;
+                            display: flex;
+                            flex-wrap: wrap;
+                            gap: 5px;
+                            gap: 5px;
+                            padding: 5px;
+                            //background-color: bisque;
+
+                            p{
+                                padding: 0px 10px;
+                                border-radius: 13px;
+                                font-weight: bold;
+                                font-size: 12px;
+                                height: 26px;
+                                display: flex;
+                                align-items: center;
+                                justify-content: center;
+                                color: rgb(26, 26, 26);
+                            }
+
+                            .JavaScript{ background-color: var(--js); }
+
+                            .HTML{ background-color: var(--html); }
+
+                            .CSS{ background-color: var(--css); }
+
+                            .React{ background-color: var(--react); }
+
+                            .Bootstrap{ background-color: var(--bt); }
+
+                            .Sass{ background-color: var(--sass); }
+
+                            .Figma{ background-color: var(--fg); }
+
+                            .Node{ background-color: var(--node); }
+                        }
+
+                        a{
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            text-decoration: none;
+                            height: 36px;
+                            width: 180px;
+                            margin: 0 auto;
+                            border: none;
+                            //font-weight: bold;
+                            font-size: 14px;
+                            border-radius: 5px;
+                            cursor: pointer;
+                            background-color: var(--cor-secun);
+                            color: var(--cor-titulo);
+
+                            &:hover{
+                                transform: scale(0.95);
+                            }
                         }
                     }
 
