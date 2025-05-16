@@ -48,9 +48,9 @@ export default function Projetos(){
                     
                     <div className='habilidades-usadas'>
             
-                        {Array.isArray(habilidade) && habilidade.map(hab => {
+                        {Array.isArray(habilidade) && habilidade.map((hab, index) => {
                             return(
-                                <p className={hab}>{hab}</p>
+                                <p className={hab} key={index}>{hab}</p>
                             )
                         })}
 
@@ -184,7 +184,7 @@ export default function Projetos(){
                             img={Nivelamento}
                             titulo={"Nivelamento 2025"}
                             link={'https://nivelamentoitec.ufpa.br/'}
-                            habilidade={['JavaScript', 'HTML', 'CSS']}
+                            habilidade={['JavaScript', 'HTML', 'CSS', 'Bootstrap', 'Sass', 'Firebase', 'Node', 'React']}
                         />
                         
                         

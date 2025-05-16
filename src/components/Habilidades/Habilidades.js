@@ -5,8 +5,8 @@ import LogoCSS from '../../img/css.png';
 import LogoREACT from '../../img/react.png';
 import LogoBt from '../../img/Bootstrap.png';
 import LogoSASS from '../../img/sass.png';
-import LogoFIGMA from '../../img/Figma.png';
 import LogoNODE from '../../img/node.png';
+import LogoFirebase from '../../img/Firebase.png';
 import { useContext } from 'react';
 import { SectionContext } from '../../context/SectionContext'
 import PopHabilidade from '../PopHabilidade/PopHabilidade';
@@ -61,7 +61,7 @@ export default function Habilidades(){
 
                     <BoxHabilidade titulo={'Sass'} img={LogoSASS}/>
 
-                    <BoxHabilidade titulo={'Figma'} img={LogoFIGMA}/>
+                    <BoxHabilidade titulo={'Firebase'} img={LogoFirebase}/>
 
                     <BoxHabilidade titulo={'Node'} img={LogoNODE}/>
                 </div>

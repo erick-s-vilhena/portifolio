@@ -24,7 +24,9 @@ export default function PopHabilidade(){
 
         Figma: "Figma é uma ferramenta de design usada para criar interfaces de usuário, protótipos e layouts de sites e aplicativos. Ele permite que várias pessoas colaborem em tempo real, como se estivessem usando o mesmo arquivo ao mesmo tempo. É muito popular entre designers e equipes de desenvolvimento.",
 
-        Node: "Node é uma plataforma que permite executar código JavaScript fora do navegador, geralmente no servidor. Com ele, é possível criar aplicações web completas, APIs, automações e muito mais, usando a mesma linguagem que o front-end. É leve, rápido e muito usado em projetos modernos."
+        Node: "Node é uma plataforma que permite executar código JavaScript fora do navegador, geralmente no servidor. Com ele, é possível criar aplicações web completas, APIs, automações e muito mais, usando a mesma linguagem que o front-end. É leve, rápido e muito usado em projetos modernos.",
+
+        Firebase: "Firebase é uma plataforma do Google que oferece diversas ferramentas para facilitar o desenvolvimento de aplicativos web e mobile, como banco de dados em tempo real, autenticação de usuários, armazenamento de arquivos, hospedagem e notificações push."
     }), [])
 
     useEffect(()=>{

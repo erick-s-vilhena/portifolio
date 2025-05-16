@@ -126,6 +126,7 @@
                         .habilidades-usadas{
                             flex-grow: 1;
                             display: flex;
+                            justify-content: left;
                             flex-wrap: wrap;
                             gap: 5px;
                             gap: 5px;
@@ -156,7 +157,7 @@
 
                             .Sass{ background-color: var(--sass); }
 
-                            .Figma{ background-color: var(--fg); }
+                            .Firebase{ background-color: var(--fb); }
 
                             .Node{ background-color: var(--node); }
                         }
