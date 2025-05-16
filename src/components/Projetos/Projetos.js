@@ -94,7 +94,7 @@ export default function Projetos(){
             
             <main>
                 <h1>
-                    A jornada até aqui
+                    A estrada até aqui
                     <div className='traco'></div>
                 </h1>
 
@@ -104,21 +104,79 @@ export default function Projetos(){
                         <BoxProjeto
                             img={Pri_LaniPage}
                             titulo={'1º Landing Page'}
-                            link={'./'}
+                            link={'https://erick-s-vilhena.github.io/1-Landing-Page/'}
                             habilidade={['HTML', 'CSS']}
                         />
 
                         <BoxProjeto
                             img={Seg_LaniPage}
                             titulo={'2º Landing Page'}
-                            link={'./'}
+                            link={'https://erick-s-vilhena.github.io/2-Landing-Page/'}
                             habilidade={['HTML', 'CSS']}
                         />
 
                         <BoxProjeto
                             img={Tri_LaniPage}
                             titulo={'3º Landing Page'}
-                            link={'./'}
+                            link={'https://erick-s-vilhena.github.io/3-Landing-Page/'}
+                            habilidade={['JavaScript', 'HTML', 'CSS']}
+                        />
+
+                        <BoxProjeto
+                            img={Nivelamento}
+                            titulo={"Nivelamento 2025"}
+                            link={'https://nivelamentoitec.ufpa.br/'}
+                            habilidade={['JavaScript', 'HTML', 'CSS']}
+                        />
+
+
+                        <BoxProjeto
+                            img={Pri_LaniPage}
+                            titulo={'1º Landing Page'}
+                            link={'https://erick-s-vilhena.github.io/1-Landing-Page/'}
+                            habilidade={['HTML', 'CSS']}
+                        />
+
+                        <BoxProjeto
+                            img={Seg_LaniPage}
+                            titulo={'2º Landing Page'}
+                            link={'https://erick-s-vilhena.github.io/2-Landing-Page/'}
+                            habilidade={['HTML', 'CSS']}
+                        />
+
+                        <BoxProjeto
+                            img={Tri_LaniPage}
+                            titulo={'3º Landing Page'}
+                            link={'https://erick-s-vilhena.github.io/3-Landing-Page/'}
+                            habilidade={['JavaScript', 'HTML', 'CSS']}
+                        />
+
+                        <BoxProjeto
+                            img={Nivelamento}
+                            titulo={"Nivelamento 2025"}
+                            link={'https://nivelamentoitec.ufpa.br/'}
+                            habilidade={['JavaScript', 'HTML', 'CSS']}
+                        />
+
+
+                        <BoxProjeto
+                            img={Pri_LaniPage}
+                            titulo={'1º Landing Page'}
+                            link={'https://erick-s-vilhena.github.io/1-Landing-Page/'}
+                            habilidade={['HTML', 'CSS']}
+                        />
+
+                        <BoxProjeto
+                            img={Seg_LaniPage}
+                            titulo={'2º Landing Page'}
+                            link={'https://erick-s-vilhena.github.io/2-Landing-Page/'}
+                            habilidade={['HTML', 'CSS']}
+                        />
+
+                        <BoxProjeto
+                            img={Tri_LaniPage}
+                            titulo={'3º Landing Page'}
+                            link={'https://erick-s-vilhena.github.io/3-Landing-Page/'}
                             habilidade={['JavaScript', 'HTML', 'CSS']}
                         />
 
